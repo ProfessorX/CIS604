@@ -1,0 +1,17 @@
+* September 
+The good old saying before you came to Masdar, "It's all about
+mathematics."
+
+
+** Beyond classical search
+
+*** Depth-Limited Search
+    - alpha-beta pruning
+      - Pruning has *no effect* on the final result of search
+
+*** Stochastic 
+    - Expectimax search
+     
+*** TODO Required reading
+    - Chapter 5
+
