@@ -15,3 +15,23 @@ mathematics."
 *** TODO Required reading
     - Chapter 5
 
+** Constraint Satisfaction Problems
+
+
+*** Map coloring
+    - Constraint graph
+    - Greedy algorithm
+    - [[https://en.wikipedia.org/wiki/Graph_coloring#Vertex_coloring][Graph Coloring]] (highly recommended)
+
+*** Varieties of CSPs
+    - Discrete
+    - Continuous
+ 
+*** Standard Search Formulation
+    - initial state
+    - successor
+    - goal test
+    - path test
+
+*** Backtrack search
+    - 
