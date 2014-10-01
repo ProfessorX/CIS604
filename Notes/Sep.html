@@ -1,63 +1,91 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Sep</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-<meta name="title" content="Sep"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-09-21T12:52+0400"/>
-<meta name="author" content="Abraham Xiao"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2014-09-28 Sun 12:25 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Abraham Xiao" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -106,28 +134,33 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Sep</h1>
-
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 September</a>
+<li><a href="#sec-1">1. September</a>
 <ul>
-<li><a href="#sec-1-1">1.1 Beyond classical search</a>
+<li><a href="#sec-1-1">1.1. Beyond classical search</a>
 <ul>
-<li><a href="#sec-1-1-1">1.1.1 Depth-Limited Search</a></li>
-<li><a href="#sec-1-1-2">1.1.2 Stochastic</a></li>
+<li><a href="#sec-1-1-1">1.1.1. Depth-Limited Search</a></li>
+<li><a href="#sec-1-1-2">1.1.2. Stochastic</a></li>
+<li><a href="#sec-1-1-3">1.1.3. <span class="todo TODO">TODO</span> Required reading</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">1.2. Constraint Satisfaction Problems</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1. Map coloring</a></li>
+<li><a href="#sec-1-2-2">1.2.2. Varieties of CSPs</a></li>
+<li><a href="#sec-1-2-3">1.2.3. Standard Search Formulation</a></li>
+<li><a href="#sec-1-2-4">1.2.4. Backtrack search</a></li>
+<li><a href="#sec-1-2-5">1.2.5. Truth table</a></li>
+<li><a href="#sec-1-2-6">1.2.6. Reasoning</a></li>
+<li><a href="#sec-1-2-7">1.2.7. Reasoning for machine</a></li>
+<li><a href="#sec-1-2-8">1.2.8. Notations</a></li>
 </ul>
 </li>
 </ul>
@@ -135,67 +168,180 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> September</h2>
 <div class="outline-text-2" id="text-1">
-
-<p>The good old saying before you came to Masdar, "It's all about
+<p>
+The good old saying before you came to Masdar, "It's all about
 mathematics."
 </p>
-
-
 </div>
 
-<div id="outline-container-1-1" class="outline-3">
+
+<div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> Beyond classical search</h3>
 <div class="outline-text-3" id="text-1-1">
-
-
-
-</div>
-
-<div id="outline-container-1-1-1" class="outline-4">
+</div><div id="outline-container-sec-1-1-1" class="outline-4">
 <h4 id="sec-1-1-1"><span class="section-number-4">1.1.1</span> Depth-Limited Search</h4>
 <div class="outline-text-4" id="text-1-1-1">
-
-<ul>
+<ul class="org-ul">
 <li>alpha-beta pruning
-<ul>
+<ul class="org-ul">
 <li>Pruning has <b>no effect</b> on the final result of search
 </li>
 </ul>
-
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-1-1-2" class="outline-4">
+<div id="outline-container-sec-1-1-2" class="outline-4">
 <h4 id="sec-1-1-2"><span class="section-number-4">1.1.2</span> Stochastic</h4>
 <div class="outline-text-4" id="text-1-1-2">
-
-<ul>
-<li>
+<ul class="org-ul">
+<li>Expectimax search
 </li>
 </ul>
-
-
-</div>
-</div>
-</div>
 </div>
 </div>
 
-<div id="postamble">
-<p class="date">Date: 2014-09-21T12:52+0400</p>
+<div id="outline-container-sec-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3"><span class="section-number-4">1.1.3</span> <span class="todo TODO">TODO</span> Required reading</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>Chapter 5
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Constraint Satisfaction Problems</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-sec-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Map coloring</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li>Constraint graph
+</li>
+<li>Greedy algorithm
+</li>
+<li><a href="https://en.wikipedia.org/wiki/Graph_coloring#Vertex_coloring">Graph Coloring</a> (highly recommended)
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Varieties of CSPs</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li>Discrete
+</li>
+<li>Continuous
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Standard Search Formulation</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<ul class="org-ul">
+<li>initial state
+</li>
+<li>successor
+</li>
+<li>goal test
+</li>
+<li>path test
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> Backtrack search</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-5" class="outline-4">
+<h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Truth table</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<ul class="org-ul">
+<li>Wikipedia <sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-6" class="outline-4">
+<h4 id="sec-1-2-6"><span class="section-number-4">1.2.6</span> Reasoning</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<ul class="org-ul">
+<li>Aspect (real world) &#x2013;&gt; facts 
+</li>
+<li>aspect &#x2013;&gt; sentences
+</li>
+<li>facts &#x2013;&gt; sentences
+</li>
+<li></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-7" class="outline-4">
+<h4 id="sec-1-2-7"><span class="section-number-4">1.2.7</span> Reasoning for machine</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<ul class="org-ul">
+<li>(and S1 S2) &#x2013;&gt; (Alpha)
+</li>
+<li>(and S1 S2) &#x2013;&gt; (not Alpha) <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-2-8" class="outline-4">
+<h4 id="sec-1-2-8"><span class="section-number-4">1.2.8</span> Notations</h4>
+<div class="outline-text-4" id="text-1-2-8">
+<ul class="org-ul">
+<li>Have: A, A&#x2013;&gt;B; Reasoning: B. (Another form: (or (not A) B))<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+<a href="https://en.wikipedia.org/wiki/Truth_table">https://en.wikipedia.org/wiki/Truth_table</a>
+</p></div>
+
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+This step is much harder in real world.
+</p></div>
+
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+Gate Circuits: <a href="http://baike.baidu.com/view/629212.htm">http://baike.baidu.com/view/629212.htm</a> <a href="https://en.wikipedia.org/wiki/Logic_gatep">https://en.wikipedia.org/wiki/Logic_gatep</a>
+</p></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
 <p class="author">Author: Abraham Xiao</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<p class="date">Created: 2014-09-28 Sun 12:25</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7c)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

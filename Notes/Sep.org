@@ -34,4 +34,39 @@ mathematics."
     - path test
 
 *** Backtrack search
+    -
+
+*** Truth table
+    - Wikipedia [fn:1]
+
+*** Reasoning
+    - Aspect (real world) --> facts 
+    - aspect --> sentences
+    - facts --> sentences
+    -
+
+*** Reasoning for machine
+    - (and S1 S2) --> (Alpha)
+    - (and S1 S2) --> (not Alpha) [fn:2]
+
+*** Notations
+    - Have: A, A-->B; Reasoning: B. (Another form: (or (not A) B))[fn:3]
+    - Knowledge Base = {P, (not (not (and Q R)))} alpha = (and (not
+      (not P)) R)
+    - Lambda Calculus (there and back again the Artificial
+      Intelligence) [fn:4]
     - 
+
+
+* Footnotes
+
+[fn:1] https://en.wikipedia.org/wiki/Truth_table
+
+[fn:2] This step is much harder in real world.
+
+[fn:3] Gate Circuits: http://baike.baidu.com/view/629212.htm
+https://en.wikipedia.org/wiki/Logic_gate 
+
+[fn:4] https://en.wikipedia.org/wiki/Lambda_calculus
+
+
