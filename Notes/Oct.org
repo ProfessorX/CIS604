@@ -1,0 +1,26 @@
+* October, 2014
+
+** 20141001
+
+*** Unit Resolution rule
+    - (and (or p q) (not q)) ; if we want the result to be true, the
+      only way is (p #t)
+    - (and (or (l1 l2 l3 ... lk)) m)
+    - (A<->B) == (and (A->B) (B->A))
+    - (A->B) == (or (not A) B)
+
+*** Resolution
+    - Resolution is sound and complete.
+       
+
+*** Propositional logic reasoning 
+    - resolution rule
+    - conjunctive normal form
+    - resolution algorithm[fn:1] The logic gate and similar things in
+      Digital Circuits will help.
+
+* Footnotes
+
+[fn:1] https://en.wikipedia.org/wiki/Logic_gate
+
+
