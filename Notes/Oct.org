@@ -19,6 +19,35 @@
     - resolution algorithm[fn:1] The logic gate and similar things in
       Digital Circuits will help.
 
+** 20141008
+
+*** Outline
+    - KB = conjunction of horn clauses
+    - 
+ 
+*** Forward chaining
+
+*** Backward chaining
+    - "Does it run backward?"
+    - It is the same as with iteration v.s. recursion.
+    -
+
+*** DPLL algorithm
+    - early termination
+    - Pure symbol heuristic
+    - unit clause heuristic
+
+*** The WalkSAT algorithm
+    - Start from a complete assignment
+    - Iterate
+    - *Min-conflict heuristic* Pick the ne that minimizes the number
+      of unsatisfied clauses
+    - It's just a balance between greediness and randomness
+
+*** Hard satisfiability problem
+    - 
+
+
 * Footnotes
 
 [fn:1] https://en.wikipedia.org/wiki/Logic_gate
