@@ -45,6 +45,21 @@
     - It's just a balance between greediness and randomness
 
 *** Hard satisfiability problem
+    -
+
+** 20141011 Predicate Logic
+
+*** Quantifiers
+    - (for-each )
+    - #:exist
+    - FOL is just another way of saying /Predicate Logic/.
+    -
+
+*** Semantics of a FOL Language
+    -
+
+*** Semantics of FOL Formulas
+    - Just the same as in "ordinary" logic
     - 
 
 
