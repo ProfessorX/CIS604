@@ -60,7 +60,31 @@
 
 *** Semantics of FOL Formulas
     - Just the same as in "ordinary" logic
+    -
+
+** 20141015 Inference with First Order Logic
+
+*** Universal instantiation
+    - A /term/ is something that refers to an object
+    - Existential instantiation
+    -
+
+*** Unification
+    - If we can find a substitution such that (Unify alpha, beta) =
+      theta (= atheta b theta) ==> #t
+    - The unification algorithm
+      - Compare the structures of the inputs, element by element. 
+
+*** The unification algorithm
+    -
+
+*** Forward-chaining algorithm
+    -
+
+*** backward-chaining algorithm
     - 
+
+
 
 
 * Footnotes
