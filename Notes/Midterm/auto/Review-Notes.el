@@ -1,5 +1,8 @@
 (TeX-add-style-hook "Review-Notes"
  (lambda ()
+    (LaTeX-add-labels
+     "sec:artif-intell"
+     "sec:problem-solving")
     (TeX-run-style-hooks
      "graphicx"
      "xcolor"
