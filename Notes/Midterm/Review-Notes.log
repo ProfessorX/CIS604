@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.9)  23 OCT 2014 18:44
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.9)  24 OCT 2014 01:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -207,17 +207,19 @@ LaTeX Font Info:    ... okay on input line 22.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
 
-Underfull \hbox (badness 1314) in paragraph at lines 33--37
+Underfull \hbox (badness 1314) in paragraph at lines 35--39
 []\OT1/cmr/m/n/10 Environment Types: Fully ob-serv-able; De-ter-min-is-tic;
  []
 
+Missing character: There is no “ in font cmr10!
+Missing character: There is no ” in font cmr10!
 [1
 
 
@@ -225,10 +227,10 @@ Underfull \hbox (badness 1314) in paragraph at lines 33--37
 Here is how much of TeX's memory you used:
  2408 strings out of 493727
  29261 string characters out of 6147890
- 96203 words of memory out of 5000000
+ 98203 words of memory out of 5000000
  5752 multiletter control sequences out of 15000+600000
  4553 words of font info for 17 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,5n,35p,235b,172s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,35p,235b,151s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on Review-Notes.pdf (1 page).
