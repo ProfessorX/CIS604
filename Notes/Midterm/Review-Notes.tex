@@ -66,7 +66,7 @@
   search problem.
 \item \textbf{Search Trees} 
   \begin{itemize}
-  \item This is a “what if” tree of plans and outcomes
+  \item This is a ``what-if'' tree of plans and outcomes
   \item For most problems, we can never actually build the whole tree
   \end{itemize}
 \item \textbf{General Tree Search} Frontier; Expansion; Exploration
@@ -76,7 +76,14 @@
   state may be achieved by multiple search tree nodes.}
 \item \textbf{Graph Search} Graph Search still  produces a search
   tree; Graph search is almost always better than tree search.
-\item 
+\item DFS graph search needs to store ``explored set'', which is
+  $O(b^{m})$. However, \textbf{DFS is optimal} when the search tree is finite,
+  all action costs are identical and all solutions have the same
+  length. However limitating this may sound, there is an important
+  class of problems that satisfies these conditions: the CSPs
+  (constraint satisfaction problems). Maybe all the examples you
+  thought about fall in this (rather common) category. 
+\item Life is fucking awesome in the United Arab Emirates!
 \end{itemize}
 
 \end{document}

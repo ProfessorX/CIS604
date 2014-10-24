@@ -1,4 +1,4 @@
-;; -*- Mode: Lisp -*-
+ ;; -*- Mode: Lisp -*-
 
 ;;;; Simple Search Algorithms
 
