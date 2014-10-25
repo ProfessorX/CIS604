@@ -2,7 +2,7 @@
 ;; 20141025 Lab 15:05
 
 ; Imperative
-<imperative>
+; <imperative>
 (define (bfs ? root)
   (let/ec return
     (define q (list root))
@@ -18,7 +18,7 @@
 
 
 ; node definitio
-<cons-node>
+; <cons-node>
 (define node-data car)
 (define node-children cdr)
 (define example-tree
@@ -38,7 +38,7 @@
       (13)
       (14)))))
 
-<example-tests>
+; <example-tests>
 (check-false
  (bfs (curry = 15) example-tree))
 (check-equal?
@@ -79,6 +79,37 @@
   (enqueue! q root)
   (bfs/queue))
 
+; simpler imperative
+(define (bfs ? root)
+  (define q (make-queue))
+  (enqueue! q root)
+  (for/or ([cur in-queue q])
+    (cond
+     [(? (node-data cur))
+      cur]
+     [else
+      (for-each (curry enqueue! q)
+                (node-children cur))
+      #f])))
+
+; binary code
+(define (node-data x) x)
+(define (node-children x)
+  (list (+ (* 2 x) 0)
+        (+ (* 2 x) 1)))
+
+; binary tests
+(check-equal?
+ (bfs (curry = 11) 1)
+ '11)
+
+; binary test infinite
+; Do NOT try this at home
+(check-false
+ (bfs (curry = 0) 1))  
+
+
+
 
 
 
@@ -94,6 +125,9 @@
     (when cond
       body ...
       (loop))))
+
+
+; It seems that <> is not a valid syntax in "pure" rkt codes.
 
 (let ()
   <cons-node>
