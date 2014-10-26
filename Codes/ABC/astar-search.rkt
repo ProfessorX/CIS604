@@ -122,7 +122,7 @@ an initial node.
 (define ((make-node-cost GX GY) n)
   (match-define (map-node M x y) n)
   (+ (abs (- x GX))
-     (abs (- y GY))))
+     (abs (- y GY))))  ; made a typo error here
 
 ; map example
 (define N 10)
@@ -145,7 +145,7 @@ an initial node.
     [2 "red"]))
 
 (define (cell-square ty)
-  (square map-scale "solid" (type-color ty)))
+  (square map-scale "solid" (type-color ty))) ; made a typo error here
 (define (row-image M row)
   (apply beside
          (for/list ([col (in-range (matrix-num-cols M))])
@@ -153,7 +153,7 @@ an initial node.
 (define (map-image M)
   (apply above
          (for/list ([row (in-range (matrix-num-rows M))])
-           (row-image M row))))
+           (row-image M row))))  ; some typo errors here
 
 
 ; path display line
@@ -175,8 +175,13 @@ an initial node.
 (save-image (path-image random-M random-path) path-image.png)
 
 
-;;; Revire
+;;; Review
 ; 20141026 Lab 00:00
 ; At last it works. Answering to the exercise questions will be done
 ; later.
+
+#|
+TODO:
+Exercise: Change the example to allow diagonal movement and update the cost estimate function.
+|#
 

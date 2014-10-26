@@ -51,7 +51,8 @@
   \begin{itemize}
   \item a state space
   \item a successor function (namely \textbf{update function} in data
-    mining algorithm series)
+    mining algorithm series, more namely \textbf{recursion} in
+    bullshit technology.)
   \item a start state (\textbf{initial value}), goal test
     (\textbf{terminating value}) and path cost function (\textbf{we
       say weights in Graph Theory})
@@ -84,9 +85,23 @@
   class of problems that satisfies these conditions: the CSPs
   (constraint satisfaction problems). Maybe all the examples you
   thought about fall in this (rather common) category. 
+\item The breadth first search and iterative deepening are
+  conceptually and computationally the same. The only difference is
+  the ``space'' (we call them \textbf{memory}) would be partially
+  saved by iterative deepening search.
 \item \textbf{Heuristics} estimate of how close a node is to a goal;
   Designed for a particular search problem. 
 % \item Life is fucking awesome in the United Arab Emirates.
+\item \textbf{A star search} Uniform-cost orders by \textbf{path cost}, or
+  backward cost  $g(n)$; Best-first orders by \textbf{distance} to goal, or
+  forward cost $h(n)$. A* Search orders by the sum:
+  $f(n)=g(n)+h(n)$. The distance is an estimated one.
+\item When A* terminates its search, it has, by definition, found a
+  path whose actual cost is lower than the estimated cost of any path
+  through any node on the frontier. But since those estimates are
+  optimistic, A* can safely ignore those nodes.
+\item In general, most natural admissible heuristics tend to be
+  consistent, especially if from relaxed problems. 
 \item 
 \end{itemize}
 
