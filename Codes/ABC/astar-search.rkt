@@ -21,8 +21,8 @@ Each search on a class of graphs will be further parameterized by a node-cost fu
 that will return the estimate of the cost from the given node to the goal and
 an initial node.
 |#
-(define-signature graph^
-  (node? edge? node-edges edge-src edge-cost edge-dest)) 
+[defnie-signature graph^
+  (node? edge? node-edges edge-src edge-cost edge-dest)] 
 
 ; map generation, plains 0, woods 1, mountains 2
 (define (make-map N)
@@ -39,7 +39,7 @@ an initial node.
 
   (define node? map-node?)
   (define edge? map-edge?)
-  (define edge-src map-edge-src)
+  (define edge-src map-edge-src) 
   (define edge-dest map-edge-dest)
 
   ; map graph cost
