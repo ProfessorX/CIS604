@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.10.9)  26 OCT 2014 10:15
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  8 NOV 2014 23:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -218,25 +218,27 @@ Underfull \hbox (badness 1314) in paragraph at lines 35--39
 []\OT1/cmr/m/n/10 Environment Types: Fully ob-serv-able; De-ter-min-is-tic;
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
+] [2] [3
+
 ]
 (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2435 strings out of 493727
- 29716 string characters out of 6147890
- 101203 words of memory out of 5000000
- 5766 multiletter control sequences out of 15000+600000
- 6252 words of font info for 25 fonts, out of 8000000 for 9000
+ 2443 strings out of 493727
+ 29841 string characters out of 6147890
+ 104241 words of memory out of 5000000
+ 5773 multiletter control sequences out of 15000+600000
+ 7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,5n,35p,235b,151s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,35p,235b,172s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (1 page).
+Output written on Review-Notes.pdf (3 pages).
