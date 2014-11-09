@@ -1,3 +1,4 @@
+#lang racket
 (require racket/list
          rackunit
          racket/function
@@ -27,7 +28,7 @@
         (11)
         (12))
        (6
-        (13)
+        (13)e
         (14)))))
   (let ()
     (define (bfs ? root)

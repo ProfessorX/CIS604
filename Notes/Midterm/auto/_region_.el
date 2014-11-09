@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "Review-Notes"
+ "_region_"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("article" "twocolumn")))
@@ -21,6 +21,5 @@
     "sec:informed-search"
     "eq:1"
     "sec:constr-satisf-probl"
-    "sec:adversarial-search"
-    "sec:expectimax-utilities")))
+    "sec:adversarial-search")))
 
