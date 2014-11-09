@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  8 NOV 2014 23:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  9 NOV 2014 03:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -228,15 +228,23 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] [2] [3
+] [2]
+Underfull \hbox (badness 2418) in paragraph at lines 289--293
+[]\OT1/cmr/bx/n/10 Genetic Al-go-rithms: \OT1/cmr/m/n/10 It uses a nat-u-ral se
+-lec-tion
+ []
 
-]
-(./Review-Notes.aux) ) 
+
+Underfull \hbox (badness 1448) in paragraph at lines 315--318
+[]\OT1/cmr/m/n/10 Players usu-ally take turns; Ac-tions may de-pend on
+ []
+
+[3] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2443 strings out of 493727
- 29841 string characters out of 6147890
- 104241 words of memory out of 5000000
- 5773 multiletter control sequences out of 15000+600000
+ 2445 strings out of 493727
+ 29891 string characters out of 6147890
+ 104261 words of memory out of 5000000
+ 5775 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  27i,5n,35p,235b,172s stack positions out of 5000i,500n,10000p,200000b,80000s

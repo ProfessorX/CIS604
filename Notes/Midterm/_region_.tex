@@ -1,4 +1,4 @@
-
+\message{ !name(Review-Notes.tex)}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: t
@@ -20,6 +20,9 @@
 
 
 \begin{document}
+
+\message{ !name(Review-Notes.tex) !offset(-3) }
+
 \section{Artificial Intelligence}
 \label{sec:artif-intell}
 
@@ -324,56 +327,14 @@
   (utility) from that state.
 \item \textbf{Minimax Values:} States Under Opponent's Control:
   $V(s')= min~V(s)$ States Under Agent's Control: \textbf{Maximize}
-  out of all possible ``worst'' results your \textbf{opponent}
-  offers. In choosing universities and advisors, pick out the
-  ``tallest'' guy from the ``small man''. 
-\item In other words, life is much much worse when there is an (or
-  more than one) adversary. I want the ``global maximum'', but the
-  adversary just \textbf{won't let it happen}.
-\item \textbf{Minimax Search:} A state-space search tree; players
-  alternate turns; compute each node's \textbf{minimax value}, namely
-  the best achievable utility against a rational (optimal) adversary.
-\item Ask this question to yourself: do we \textbf{really} need to
-  explore the whole tree?
-\item \textbf{Resource Limits:} In realistic games, cannot search to
-  leaves. Solution: \textbf{Depth-Limited Search}. Search only to a
-  limited depth in the tree, and replace terminal utilities with an
-  evaluation function for non-terminal positions.
-\item \textbf{Depth Matters:} An important example of the tradeoff
-  between complexity of features and complexity of computation.
-\item \textbf{Evaluation Functions:} In practice, typically weighted
-  linear sum of features. 
-\item \textbf{Game Tree Pruning:} Look at the trees that do not have
-  to be minimized. 
-\item \textbf{Alpha-Beta Pruning:} Key idea it symmetric. To sum up,
-  it's already \textbf{bad enough} that it won't be played. $\alpha$
-  MAX's best option on the path to root. $\beta$ MIN's best option on
-  path to root. Tip: You have to be right for the children of the
-  route. Therefore good child ordering improves effectiveness of
-  pruning. 
+  out of all possible ``worst'' results your 
 \end{itemize}
 
-\subsection{Expectimax and Utilities}
-\label{sec:expectimax-utilities}
-
-\begin{itemize}
-\item Uncertain outcomes controlled by \textbf{chance}, not an
-  adversary!
-\item Values should now reflect average-case (expectimax) outcomes,
-  not worst-case (minimax) outcomes. (Explicit randomness,
-  Unpredicable opponents, Actions can fail).
-\item \textbf{Expectimax search:} compute the average score under
-  optimal play. Key idea: Calculate their \textbf{expected
-    utilities}. 
-\item For average-case expectimax reasoning, we need
-  \textbf{magnitudes} to be meaningful. Not only order matters,
-  magnitudes as well.
-\item As we get more evidence, probabilities may change.
-\item 
-\end{itemize}
 \end{document}
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
+
+\message{ !name(Review-Notes.tex) !offset(-340) }
