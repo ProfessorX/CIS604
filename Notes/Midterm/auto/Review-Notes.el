@@ -22,5 +22,6 @@
     "eq:1"
     "sec:constr-satisf-probl"
     "sec:adversarial-search"
-    "sec:expectimax-utilities")))
+    "sec:expectimax-utilities"
+    "sec:mark-decis-proc")))
 

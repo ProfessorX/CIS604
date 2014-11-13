@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  9 NOV 2014 03:43
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  13 NOV 2014 06:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,14 +239,16 @@ Underfull \hbox (badness 1448) in paragraph at lines 315--318
 []\OT1/cmr/m/n/10 Players usu-ally take turns; Ac-tions may de-pend on
  []
 
-[3] (./Review-Notes.aux) ) 
+[3] [4] [5
+
+] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2445 strings out of 493727
- 29891 string characters out of 6147890
- 104261 words of memory out of 5000000
- 5775 multiletter control sequences out of 15000+600000
+ 2447 strings out of 493727
+ 29928 string characters out of 6147890
+ 105271 words of memory out of 5000000
+ 5777 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,5n,35p,235b,172s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,35p,235b,228s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (3 pages).
+Output written on Review-Notes.pdf (5 pages).

@@ -369,11 +369,157 @@
   \textbf{magnitudes} to be meaningful. Not only order matters,
   magnitudes as well.
 \item As we get more evidence, probabilities may change.
+\item \textbf{Random variable} represents an event whose outcome is
+  unknown.
+\item \textbf{Probability distribution} is an assignment of
+  \textbf{weights} to outcomes. Note, in functional programming, we
+  can also say that it's a \textbf{mapping} of weights to outcomes.
+\item The \textbf{expected value} of a function of a random variable
+  is the \textbf{average}, weighted by the probability distribution
+  over outcomes.
+\item Having a probabilistic belief about another agent's action
+  \textbf{does not} mean that the agent is flipping any coins!
+\item Based on \textbf{how we think} the world works, what computation
+  we should do. Are our opponents adversarial or by chance?
+\item \textbf{Minimax} generalization:
+  \begin{itemize}
+  \item Terminals have utility tuples (namely, lists)
+  \item Node values are also utility tuples
+  \item Each player maximizes its own component
+  \item Can give rise to \textbf{cooperation} and \textbf{competition}
+    dynamically. 
+  \end{itemize}
+\item \textbf{Vampire Bunnies}
+\item {\color{red} Worst case reasoning only works to the extent that
+    your model is sufficiently simple.} Namely, \textbf{minimax} is
+  just a \textbf{binary} ``crap'', though the world can be
+  ``simulated'' based on asking \textbf{yes or nos}, it is still too
+  young too simple, sometimes naive, naive!``Yo you may be hit by a
+  METEOR!!'' 
+\item Tip: A rational agent should choose the action that maximizes
+  its expected utility, \textbf{given its knowledge}.
+\item \textbf{Utilities} are functions from outcomes (states of the
+  world) to real numbers that describe an \textbf{agent's
+    preferences}.
+\item We hard-wire utilities and let behaviors emerge. The search
+  procedure should do that for us. Behavior is complicated and
+  \textbf{context} dependent.
+\item Utilities can also be regarded as a reflection of
+  \textbf{uncertain outcomes}. But win or lose, you play it.
+\item An agent with \textbf{intransitive preferences} can be induced
+  to give away all of its money. (Loop forever.)
+\item Utility scales: normalized utilities, micromorts,
+  quality-adjusted life years.
+\item People would pay to reduce their risks.
+\end{itemize}
+
+\subsection{Markov Decision Processes}
+\label{sec:mark-decis-proc}
+
+\begin{itemize}
+\item \textbf{MDP} A way of formalizing the idea of non-deterministic
+  search, which is the search when your actions' outcomes are
+  \textbf{uncertain}. 
+\item \textbf{Noisy Movement} actions do not always go as planned.
+\item An MDP is defined by: a set of states, a set of actions, a
+  transition function, a reward function, a start state, and maybe a
+  terminal state. Therefore, one way to solve the MDPs is with
+  expectimax search. Namely, it's yet another \textbf{fancy search},
+  but our \textbf{testing goal} has changed.
+\item ``Markov'' means action outcomes depend only on the current
+  state (namely, to simplify the calculation, we \textbf{do need to}
+  make some assumptions.) This is just like search, where the
+  \textbf{successor function} could only depend on the current state
+  (not the history). Well, if you do want to depend on the history,
+  GIFF more powerful computers and be a master of, you named it,
+  \textbf{statistics and matrix}.
+\item In deterministic single-agent search problems, we wanted an
+  optimal plan, or sequence of actions, from start to a
+  goal. (Actually same ``greedy ideas'' in non-deterministic problems,
+  but in situations like this, we are forced to enjoy the
+  \textbf{uncertainty}, which comes from, well, you named it, mother
+  nature or rather, quantum mechanics.)
+\item An optimal \textbf{policy} is one that maximizes expected
+  utility \textbf{if followed}. When we say if, you know we are
+  talking about the fucking \textbf{uncertainty}.
+\item An \textbf{explicit} policy defines a reflex agent. 
+\item \textbf{Reflex} an action that is performed as a response to a
+  stimulus and without conscious thought. 
+\item Expectimax did \textbf{not} compute entire policies, solutions,
+  ideas, paths whatsoever. It computed the action for a single state
+  only. But \textbf{IT WORKS}.
+\item What \textbf{Markov} did is just to remove the redundancy so
+  that we can use \textbf{minimal} information to \textbf{render} the
+  things down.
+\item \textbf{Your models are never going to be perfect.}
+\item Each MDP state projects an expectimax-like search tree.
+\item \textbf{Utilities of Sequences} Ask questions: more or less; now
+  or later (mind the \textbf{discounting}). 
+\item \textbf{Discounting} values of rewards (may and usually so)
+  decay exponentially. It helps our algorithms \textbf{converge}!!!
+\item \textbf{Infinite Utilities} Finite horizon, discounting or
+  absorbing state (like ``overheated'' for racing). In general we will
+  have \textbf{discounts}.
+\item \textbf{Policy} Mapping from actions to states. \textbf{Utility}
+  sum of (discounted) rewards.
+\item \textbf{Values of States} fundamental operation: compute the
+  (\textbf{expectimax}) value of a state. 
+  \begin{itemize}
+  \item Expected utility under optimal action.
+  \item Average sum of (discounted) rewards.
+  \item This is \textbf{just} what expectimax computed.
+  \end{itemize}
+\item Recursive definition of values:
+  \begin{itemize}
+  \item $V^{*}(s)={\displaystyle\max_{a}}*Q^{*}(s,a)$
+  \item The value of a state is the \textbf{max} over all the
+    \textbf{actions} available to you.
+  \item $Q^{*}(s,a)=\sum_{s'}T(s,a,s')[R(s,a,s')+\gamma V^{*}(s')]$
+  \item We are going to get a reward in the next time step, and a
+    \textbf{future} reward. They are going to be \textbf{weighted} by
+    the \textbf{relative probabilities} that come from our
+    \textbf{transition function}. Mind the future shit, so we need to
+    add a \textbf{discount} on the future, because it's not what we
+    get\@ NOW.
+  \end{itemize}
+\item States are repeated. Tree goes on forever. Note: deep parts of
+  the tree eventually \textbf{does not} matter if $\gamma < 1$.
+\item \textbf{Time-Limited Values} $V_{k}(s)$ is the \textbf{optimal}
+  value of $s$ if the game ends in $k$ more time steps. Equivalently,
+  it's what a \textbf{depth-k} expectimax would give from s. (Namely,
+  life is short, PLEASE do not loop/recur forever, please\ldots)
+\item Because we are just truncating, we are just ending the game---we
+  \textbf{do not} need an evaluation function. Because \textbf{IT JUST
+  STOPS}.
+\item So it is a \textbf{trade-off} of how many states you have, how
+  connected they are and how deeply you want to go into the tree.
+\item Basic idea: approximations get refined towards optimal
+  values. (When we say refine, we can also say, you guessed it,
+  \textbf{filtering}.) 
+\item \textbf{Convergence}
+  \begin{itemize}
+  \item If the tree has maximum depth M, then $V_{M}$ holds the actual
+    untruncated values. \textbf{I have done the EM search} and any
+    further iteration/recursion will do nothing (Namely, their
+    \textbf{reward}, return, gains, utilities are considered,
+    regarded, or set $0$, so it's ``mathematically'' dead, then we do
+    \textbf{not} need to, you name it, do calculations \textbf{any
+      more}). 
+  \item If the discount is \textbf{less than} 1.
+  \item The last layer is at best all $R_{\max}$.
+  \item The last layer is at worst $R_{\min}$.
+  \item But everything is \textbf{discounted} by $\gamma^{k}$ that far
+    out. 
+  \item So $V_{k}$ and $V_{k+1}$ are \textbf{at most} $\gamma^{k} \max
+    |R|$ different.
+  \item So as $k$ increases, the values converge because the
+    \textbf{differences} are \textbf{smaller than smaller}. After all
+    these ``smalling'' processes, it will die, or at least looks like
+    ``dead''. That word means there is \textbf{no significant} further
+    growth. 
+  \end{itemize}
 \item 
 \end{itemize}
 \end{document}
 
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
+
