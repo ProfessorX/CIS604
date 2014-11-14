@@ -22,6 +22,11 @@
     "eq:1"
     "sec:constr-satisf-probl"
     "sec:adversarial-search"
+    "sec:uncert-knowl-reas"
     "sec:expectimax-utilities"
-    "sec:mark-decis-proc")))
+    "sec:mark-decis-proc"
+    "sec:mark-decis-proc-1"
+    "sec:learning"
+    "sec:reinf-learn-1"
+    "sec:reinf-learn-2")))
 

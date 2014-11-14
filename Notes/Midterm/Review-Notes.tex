@@ -353,6 +353,11 @@
   pruning. 
 \end{itemize}
 
+\section{Uncertain Knowledge and Reasoning}
+\label{sec:uncert-knowl-reas}
+
+
+
 \subsection{Expectimax and Utilities}
 \label{sec:expectimax-utilities}
 
@@ -518,8 +523,185 @@
     ``dead''. That word means there is \textbf{no significant} further
     growth. 
   \end{itemize}
-\item 
+\end{itemize}
+
+\subsection{Markov Decision Processes Continued}
+\label{sec:mark-decis-proc-1}
+
+\begin{itemize}
+\item Oh! That's their probability of landing a $s'$.
+\item \textbf{Policy} A map (surely it's with Python and Lisp) of
+  states to actions.
+\item Your transition function tells you what the \textbf{likelihoods}
+  are. 
+\item {\color{red} \textbf{Rewards} are instantaneous and \textbf{values} are
+    accumulative.} It's an very important distinction. 
+\item \textbf{How to be optimal:} Take correct first action; Keep
+  being optimal. It's just some kind of recursive procedures, or some
+  ``iterative dynamic programming''. Holy Jesus Lord, \textbf{they are
+  actually fuckingly the same thing, will you be able to understand}?
+  This of course is in terms of \textbf{implementation}. And isn't
+  this concept called ``greedy'' in algorithm book?
+\item Bellman equations \textbf{characterize} the optimal values; the
+  \textbf{fuck yourself} algorithm ``computes'' them. Because of this,
+  there is now a \textbf{real recursion}. It bottoms out at $0$. And
+  suddenly we have a notion of times-attached.
+\item Expectimax trees max over all actions to compute the
+  \textbf{optimal} values.
+\item Turn recursive Bellman equations into \textbf{updates}. Namely,
+  it's just the fucking value iteration.
+\item Without the maxes, the Bellman equations are just a
+  \textbf{linear system}.
+\item $\pi^{*}(s)={\displaystyle argmax_{a}}\Sigma
+  T(s,a,s')[R(s,a,s')+\gamma V^{*}(s')]$ This is called \textbf{policy
+  extraction}, since it gets the policy implied by the values. This is
+  also called \textbf{reconstruct}.
+\item $\pi^{*}(s)=argmax_{a}Q(s,a)$ Computing actions from
+  \textbf{Q-Values} is completely trivial. And it is much easier to
+  select from q-values than values.
+\item What value iteration does, is essentially mimics Bellman
+  Equation. Problem: It's slow---$O(S^{2}A)$ per iteration. The
+  ``max'' at each state rarely changes. And more importantly, the
+  \textbf{policy} often converges \textbf{long before} the values.
+\item \textbf{Policy Iteration (Or Recursion)} Evaluation: for fixed
+  current policy $\pi$, find values with policy
+  evaluation. Improvement: for fixed values, get a better policy by
+  \textbf{argmax}. 
+\item Another view (which is more practical) is thinking we are doing
+  \textbf{value iteration} but on most rounds we just go with the \textbf{last
+    action} that optimize the state, rather than considering them all.
+\item They differ only in whether we plug in a fixed policy or max
+  over actions. Namely, these all look (and essentially are) the same.
+\item That wasn't planning! It was learning. There was an MDP, but you
+  couldn't solve it with just \textbf{purely pre-computation}. (It's
+  all about the computation, but orders, namely, prior and posterior
+  do matter.)
+\item Important ideas in reinforcement learning (in control theory
+  bitches, they call the \textbf{crap negative/positive feedback
+    loop}): 
+  \begin{itemize}
+  \item Exploration: you \textbf{have to} (as is with my situation, I
+    have to learn, to prove to others, and to be strong) try unknown
+    actions to get information.
+  \item Exploitation: eventually, you have to \textbf{use what you
+      know}
+  \item Regret: even if you learn intelligently, you \textbf{make
+      mistakes}. 
+  \item \textbf{Sampling} because of chance, you have to try things
+    \textbf{repeatedly}. 
+  \item \textbf{Difficulty} learning can be much harder than solving a
+    known MDP. (Comment: maybe that's why the Machine Learning SIGs
+    are recruiting more and more, say, members/noobs?)
+  \end{itemize}
+\item Your \textbf{lack of knowledge} then triggers a much more
+  difficult reasoning problem about \textbf{HOW} you should act. (Math
+  buddies tells you WHAT. Programmers do the HOW, and a few true
+  geniuses learn/are forced to ask WHY.) ``Why OSX is more fancy? Why
+  Windows has such a large market share, etc.''
+\item \textbf{How you solve an MDP when you don't know which MDP you
+    are solving?} Eggs first? Or Chicken first?
+\end{itemize}
+
+
+\section{Learning}
+\label{sec:learning}
+
+
+
+\subsection{Reinforcement Learning 1}
+\label{sec:reinf-learn-1}
+
+\begin{itemize}
+\item Basic idea:
+  \begin{itemize}
+  \item Receive feedback in the form of \textbf{rewards}
+  \item Agent's utility is defined by the \textbf{reward function}
+  \item Must (learn to) act so as to \textbf{maximize expected
+      rewards}
+  \item Rule of thumb: All learning is based on what? \textbf{Observed
+    samples of outcomes}. Namely, weighing the elephant. When you take
+  an action, you see what happens. But you \textbf{DO NOT} see
+  everything that might happen.
+  \end{itemize}
+\item New twist: don't know Transition function or reward
+  function. Must actually \textbf{try actions and states} out to
+  learn. 
+\item Offline (MDPs). Online (Reinforcement Learning). (And then
+  pretend that it is true.)
+\item \textbf{Model-Based Idea} Learn an approximate model based on
+  experiences (namely, empirical crap). Solve for values \textbf{as
+    if} the learned model \textbf{were} correct. (WHAT IF it is not
+  correct? Then go fuck yourself.) This is, indeed how the
+  state-of-the-art data mining, machine learning, and maybe cock
+  sucking works.
+\item Model-Based Learning: Learn the empirical MDP model, then solve
+  the \textbf{learned} MDP.
+\item $E[A]=\sum_{a}P(a)\cdot a$ This is $100\%$ valid when we
+  \textbf{know} $P(A)$. Without $P(A)$, we can \textbf{try to} collect
+  samples $[a_{1},a_{2},\ldots,a_{N}]$.
+  \begin{itemize}
+  \item For Model Based, we have $\hat{P}(a)=\dfrac{num(a)}{N}$
+    Eventually you learn the right model.\\[1pt]
+  \item For Model Free, we just do $E[A]\simeq \dfrac{1}{N}\sum_{i}
+    a_{i}$ Samples appear with the \textbf{right frequencies}.
+  \end{itemize}
+\item Passive Reinforcement Learning: Goal is to learn the
+  \textbf{state values} by inputting/carrying out a fixed policy
+  (namely, action/signal).
+\item We are missing something! But in the end, it's an average. It's
+  an \textbf{average} of a bunch of things, each thing is a
+  \textbf{one-step reward} plus a \textbf{discounted future} from
+  \textbf{previous computation}. (Aren't math and natural language
+  description sucking? Indeed they are.)
+\item \textbf{Sample-Based Policy Evaluation} Take samples of outcomes
+  $s'$ (by doing the ACTION!) and \textbf{average}.
+\item Big Idea: Learn from every experience. Namely: Update $V(s)$
+  each time we experience a transition $(s,a,s',r)$. How?
+  $V^{\pi}\leftarrow (1-\alpha)V^{\pi}(s)+(\alpha)*sample$ The fucking
+  $\alpha$ is called learning rate.
+\item You can think of that as an
+  \textbf{error}. $V^{\pi}(s)\leftarrow V^{\pi}(s)+\alpha (sample -
+  V^{\pi}(s))$ Adjust your estimate in  the direction of error by some
+  small step size of $\alpha$. In communication, they call the crap
+  \textbf{Affine Projection} algorithm.
+\item Running interpolation update: $\bar{x}_{n}=(1-\alpha)\cdot
+  \bar{x}_{n-1}+\alpha\cdot x_{n}$
+\item \textbf{Active Reinforcement Learning} {\color{red} learn the
+    optimal policy/values}
+\item But Q-Values are \textbf{more useful} (how the heck do you know
+  that it is more useful? By trials and errors indeed.)
+\item
+  $Q_{k+1}(s,a)\leftarrow\sum_{s'}T(s,a,s')[R(s,a,s')+\gamma\displaystyle{\max_{a'}}Q_{k}(s',a')]$
+  This crap is called sample-based Q-value recursion/iteration. Key
+  idea: instead of looking at \textbf{two consecutive} {\color{red}
+    values}, let us look at \textbf{two consecutive}
+  Q-values. (Namely, because they are ``more useful''. Practically,
+  they are relatively easy to, you guessed it, COMPUTE.)
+\item Q-Learning converges to \textbf{optimal} policy, even if you are
+  acting \textbf{suboptimally}! Caveats:
+  \begin{itemize}
+  \item You have to explore enough.
+  \item You have to eventually make the learning rate small enough.
+  \item Basically, in the limit, it doesn't matter how you select
+    actions. (Note: In the end, you will learn that cliff jumping is
+    bad.)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Reinforcement Learning 2}
+\label{sec:reinf-learn-2}
+
+\begin{itemize}
+\item \textbf{Big idea} Compute all averages over $T$ using sample
+  outcomes, namely by trials and errors. 
 \end{itemize}
 \end{document}
 
 
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
