@@ -29,6 +29,7 @@
     "sec:probability"
     "sec:markov-models"
     "sec:hmms-part-filt"
+    "sec:application-hmms"
     "sec:learning"
     "sec:reinf-learn-1"
     "sec:reinf-learn-2")))

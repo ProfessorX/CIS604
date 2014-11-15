@@ -670,6 +670,58 @@
 \label{sec:hmms-part-filt}
 
 \begin{itemize}
+\item Often, we want to \textbf{reason about a sequence} of
+  observations. Then we need to introduce \textbf{time} (or space)
+  into our models.
+\item A \textbf{Markov Model} is a chain-structured BN.
+\item How we could mathematically show what is \textbf{intuitively}
+  true here, in Markov models.
+\item ``The distribution on the year 3000 turns out not to depend on
+  the possibility of today's at all.'' It's just a \textbf{property} of
+  transition function/matrix.
+\item When running Gibbs sampling long enough we get a sample from the
+  desired distribution. The \textbf{long enough} does indeed implies
+  \textbf{infinity}. 
+\item I know two things, how the world changes in every time-step. And
+  some kind of reading every step to help me. Namely, you observe
+  outputs (effects) at each time step.
+\item ``This is your assumptions about the world.''
+\item HMMs have two important independence properties: Markov hidden
+  process, future \textbf{depends} on past \textbf{via the
+    present}. More importantly, current observation independent of
+  \textbf{all else} given current state.
+\item The evidence variables are \textbf{conditionally independent}
+  given the HIDDEN state.
+\item \textbf{Hidden State} Usually the thing you want to figure
+  out. \textbf{Evidence Variable} The thing you observe.
+\item We all know about Bayes Nets. You write down the things you
+  \textbf{know}, and \textbf{figure out} the things you don't know.
+\item Passage of Time, basic idea, beliefs get ``pushed'' through the
+  \textbf{transitions}. IMHO, just two-step Bayes calculation, you
+  have Evidence, then you reason about $X_{1}$. Since $E_{1}$ has no
+  direct relation with $X_{2}$, the whole remaining processes can
+  \textbf{only} done via $X_{1}\rightarrow X_{2}$.
+\item Beliefs can be ``reweighted'' by likelihood of evidence.
+\item More particles (THEY ARE JUST samples), more accuracy.
+\item This is like prior sampling---samples' frequencies reflect the
+  transition probabilities. \textbf{If enough} samples, \textbf{close}
+  to exact values before and after.
+\end{itemize}
+
+\subsection{Application of HMMs}
+\label{sec:application-hmms}
+
+\begin{itemize}
+\item As time passes, the distribution can \textbf{change}. It depends
+  on the \textbf{model} we have for \textbf{how} time passes.
+\item \textbf{Dynamic Bayes Nets} We want to track multiple variables
+  over time, using \textbf{multiple sources of evidence}.
+\item Repeat a fixed Bayes net structure at each time.
+\item Forward Algorithm (Sum)
+  $f_{t}[x_{t}]=P(x_{t},e_{1:t})=P(e_{t}|x_{t})\Sigma_{x_{t-1}}P(t_{t}|x_{t-1})f_{t-1}[x_{t-1}]$ 
+\item Viterbi Algorithm (Max)
+  $m_{t}[x_{t}]=\max_{x_{1}:t-1}P(x_{1:t-1},x_{t},e_{1:t})$
+\item It costs money to run, well, \textbf{computation}.
 \item 
 \end{itemize}
 
