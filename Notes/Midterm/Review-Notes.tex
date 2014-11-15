@@ -602,10 +602,80 @@
     are solving?} Eggs first? Or Chicken first?
 \end{itemize}
 
+\subsection{Probability}
+\label{sec:probability}
+
+\begin{itemize}
+\item You deal with integrals rather than summations. 
+\item Size of distribution if $n$ variables with domain sizes $d$?
+\item A probabilistic model is a \textbf{joint distribution} over a
+  set of random variables.
+\item Marginal distributions are sub-tables which eliminate
+  variables. 
+\item \textbf{Sanity Check}.
+\item $P(a|b)=\frac{P(a,b)}{P(b)}$ ``Hey! I know b is happening. Then
+  you can, in this way calculate the \textbf{probability} of a is ALSO
+  happening.''
+\item \textbf{Conditional Distribution} is a consequence of our
+  \textbf{Joint Distribution}. (Mother and Son relationship.)
+\item \textbf{Probabilistic Inference} compute a desired probability
+  from other \textbf{known} probabilities.
+\item Inference by enumeration: select the entries \textbf{consistent} with the
+  evidence; sum out H to get joint of Query and evidence; normalize.
+\end{itemize}
+
+\subsection{Markov Models}
+\label{sec:markov-models}
+
+\begin{itemize}
+\item $P(y)P(x|y)=P(x,y)$ derived from conditional probabilities. We
+  specify a marginal and a conditional, then we get a \textbf{joint
+    distribution}.
+\item \textbf{The Chain Rule} for joint probability distribution:
+  $P(x_{1},x_{2},\ldots,x_{n})=\Pi_{i}P(x_{1}|x_{1}\ldots x_{i-1})$
+\item $P(x|y)=\dfrac{P(y|x)}{P(y)}P(x)$ Both of them equal to the
+  \textbf{joint probability}. And this fancy refactored formula is
+  called (you guessed it) \textbf{Bayes' Rule}.
+\item Let us build one conditional from its \textbf{reverse}.
+\item What the heck is ``given z'', ``given x'' or ``given y'' in the
+  probabilistic reasoning, or statistic crap? ``They will bend to my
+  command!'' Or in a more functional flavor, \textbf{Realm of
+    Racket}. In set theory, that's called ``realm of z'', ``realm of
+  x'', etc.
+\item \textbf{Conditional Independence} is our most basic and robust
+  form of knowledge about uncertain environments. $X$ is conditionally
+  independent of $Y$ given $Z$ \textbf{if and only if}:
+  $$ \forall x,y,z: P(x,y|z)=P(x|z)P(y|z)$$ or equivalently,
+  \textbf{if and only if}:
+  $$\forall x,y,z:P(x|z,y)=P(x|z)$$
+\item {\color{red}\textbf{If I destroy you, what business is that of
+      yours?}}
+\item Why I write  crap sentences like the one above? Do not you see
+  in the second form that $y$ is ``destroyed''?
+\item Often, we want to \textbf{reason about a sequence} of
+  observations. 
+\item Markov Models \textbf{implied conditional independencies} Past
+  variables independent of future variables \textbf{given the
+    present}.
+\item \textbf{Stationary Distribution} The distribution we end up with
+  is called stationary distribution $P_{\infty}$ of the chain. It
+  satisfies:
+  $P_{\infty}(X)=P_{\infty+1}(X)=\sum_{x}P(X|x)P_{\infty}(x)$. It just
+  says that this \textbf{function converges}. It converges! There is
+  an END!\@
+\end{itemize}
+
+
+\subsection{HMMs and Particle Filtering}
+\label{sec:hmms-part-filt}
+
+\begin{itemize}
+\item 
+\end{itemize}
+
 
 \section{Learning}
 \label{sec:learning}
-
 
 
 \subsection{Reinforcement Learning 1}
@@ -693,13 +763,62 @@
 
 \begin{itemize}
 \item \textbf{Big idea} Compute all averages over $T$ using sample
-  outcomes, namely by trials and errors. 
+  outcomes, namely by trials and errors.
+\item The problem is, that I \textbf{do not} know the transition
+  function.
+\item \textbf{Exploration} You try things, which may be
+  disasters. Namely, you just do not know the \textbf{pits} until you
+  try it.
+\item \textbf{Exploitation} You do the things which currently appear
+  to be good.
+\item How to explore? Simplest, random actions
+  ($\epsilon$-greedy). Possible solution to problems: lower $\epsilon$
+  over time; use exploration functions.
+\item One sample exploration function is: take a value estimate $u$
+  and a visit count $n$, returns an optimistic utility:
+  $f(u,n)=u+k/n$. ``You try things that are known to lead to things
+  that are unknown.''
+\item \textbf{Regret} is a measure of your total mistake cost: the
+  difference (namely, do a comparison or subtraction or
+  differentiation, whatsoever you like.) between your
+  expected rewards, including youthful suboptimality, AND
+  optimal (expected) rewards.
+\item Minimizing regret goes beyond learning to be optimal---it
+  requires \textbf{optimally learning to be optimal}. (Comment:
+  Regret, balabala, value iteration all such and such are fancy names
+  given by \textbf{Computer Scientists} to ease the fear of dealing
+  with TONS of mathematical equations. Namely, to concrete those
+  fucking math abstractions---equations, inequations.) All in all,
+  these are the ABSTRACTION (simulation, modeling, whatsoever) of our
+  WORLD.   
+\item Anyway, those models do work, under certain circumstances. 
+\item Instead and In reality we want to \textbf{generalize}:
+  \begin{itemize}
+  \item Learn about some small number of training states from
+    experience (or part of the real states, namely, test states)
+  \item Generalize that experience to new, similar situations
+  \item This is a fundamental idea in \textbf{machine learning},
+    namely, build a MODEL or heuristic, and see if it works.
+  \end{itemize}
+\item You are going to learn faster if you do not have to
+  \textbf{repeat} lessons in every \textbf{similar state}.
+\item \textbf{Features} are functions from states to real numbers
+  (often 0/1) that capture \textbf{important} properties (namely,
+  CORRECTLY describes) of the state.
+\item ``Give me a transition so that I can learn.''
+\item ``You compute how wrong you were, and you try to make that
+  number less.''
+\item Adjust \textbf{weights} of active features.
+\item Q-learning priority: Get Q-values close (modeling). Action
+  selection priority: get ordering of Q-values right
+  (prediction). Solution: learn policies that maximize
+  \textbf{rewards}, not the value that predict them. Namely, care more
+  about PREDICTION. More namely, care more about, well, you named it,
+  ``FUTURE''.
+\item Better methods exploit lookahead structure, sample wisely,
+  change parameters\ldots
 \end{itemize}
 \end{document}
-
-
-
-
 
 %%% Local Variables:
 %%% mode: latex

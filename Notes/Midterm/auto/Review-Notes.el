@@ -26,6 +26,9 @@
     "sec:expectimax-utilities"
     "sec:mark-decis-proc"
     "sec:mark-decis-proc-1"
+    "sec:probability"
+    "sec:markov-models"
+    "sec:hmms-part-filt"
     "sec:learning"
     "sec:reinf-learn-1"
     "sec:reinf-learn-2")))
