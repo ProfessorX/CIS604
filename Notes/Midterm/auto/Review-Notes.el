@@ -22,5 +22,15 @@
     "eq:1"
     "sec:constr-satisf-probl"
     "sec:adversarial-search"
-    "sec:expectimax-utilities")))
+    "sec:uncert-knowl-reas"
+    "sec:expectimax-utilities"
+    "sec:mark-decis-proc"
+    "sec:mark-decis-proc-1"
+    "sec:probability"
+    "sec:markov-models"
+    "sec:hmms-part-filt"
+    "sec:application-hmms"
+    "sec:learning"
+    "sec:reinf-learn-1"
+    "sec:reinf-learn-2")))
 

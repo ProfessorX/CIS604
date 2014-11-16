@@ -353,6 +353,11 @@
   pruning. 
 \end{itemize}
 
+\section{Uncertain Knowledge and Reasoning}
+\label{sec:uncert-knowl-reas}
+
+
+
 \subsection{Expectimax and Utilities}
 \label{sec:expectimax-utilities}
 
@@ -369,7 +374,501 @@
   \textbf{magnitudes} to be meaningful. Not only order matters,
   magnitudes as well.
 \item As we get more evidence, probabilities may change.
+\item \textbf{Random variable} represents an event whose outcome is
+  unknown.
+\item \textbf{Probability distribution} is an assignment of
+  \textbf{weights} to outcomes. Note, in functional programming, we
+  can also say that it's a \textbf{mapping} of weights to outcomes.
+\item The \textbf{expected value} of a function of a random variable
+  is the \textbf{average}, weighted by the probability distribution
+  over outcomes.
+\item Having a probabilistic belief about another agent's action
+  \textbf{does not} mean that the agent is flipping any coins!
+\item Based on \textbf{how we think} the world works, what computation
+  we should do. Are our opponents adversarial or by chance?
+\item \textbf{Minimax} generalization:
+  \begin{itemize}
+  \item Terminals have utility tuples (namely, lists)
+  \item Node values are also utility tuples
+  \item Each player maximizes its own component
+  \item Can give rise to \textbf{cooperation} and \textbf{competition}
+    dynamically. 
+  \end{itemize}
+\item \textbf{Vampire Bunnies}
+\item {\color{red} Worst case reasoning only works to the extent that
+    your model is sufficiently simple.} Namely, \textbf{minimax} is
+  just a \textbf{binary} ``crap'', though the world can be
+  ``simulated'' based on asking \textbf{yes or nos}, it is still too
+  young too simple, sometimes naive, naive!``Yo you may be hit by a
+  METEOR!!'' 
+\item Tip: A rational agent should choose the action that maximizes
+  its expected utility, \textbf{given its knowledge}.
+\item \textbf{Utilities} are functions from outcomes (states of the
+  world) to real numbers that describe an \textbf{agent's
+    preferences}.
+\item We hard-wire utilities and let behaviors emerge. The search
+  procedure should do that for us. Behavior is complicated and
+  \textbf{context} dependent.
+\item Utilities can also be regarded as a reflection of
+  \textbf{uncertain outcomes}. But win or lose, you play it.
+\item An agent with \textbf{intransitive preferences} can be induced
+  to give away all of its money. (Loop forever.)
+\item Utility scales: normalized utilities, micromorts,
+  quality-adjusted life years.
+\item People would pay to reduce their risks.
+\end{itemize}
+
+\subsection{Markov Decision Processes}
+\label{sec:mark-decis-proc}
+
+\begin{itemize}
+\item \textbf{MDP} A way of formalizing the idea of non-deterministic
+  search, which is the search when your actions' outcomes are
+  \textbf{uncertain}. 
+\item \textbf{Noisy Movement} actions do not always go as planned.
+\item An MDP is defined by: a set of states, a set of actions, a
+  transition function, a reward function, a start state, and maybe a
+  terminal state. Therefore, one way to solve the MDPs is with
+  expectimax search. Namely, it's yet another \textbf{fancy search},
+  but our \textbf{testing goal} has changed.
+\item ``Markov'' means action outcomes depend only on the current
+  state (namely, to simplify the calculation, we \textbf{do need to}
+  make some assumptions.) This is just like search, where the
+  \textbf{successor function} could only depend on the current state
+  (not the history). Well, if you do want to depend on the history,
+  GIFF more powerful computers and be a master of, you named it,
+  \textbf{statistics and matrix}.
+\item In deterministic single-agent search problems, we wanted an
+  optimal plan, or sequence of actions, from start to a
+  goal. (Actually same ``greedy ideas'' in non-deterministic problems,
+  but in situations like this, we are forced to enjoy the
+  \textbf{uncertainty}, which comes from, well, you named it, mother
+  nature or rather, quantum mechanics.)
+\item An optimal \textbf{policy} is one that maximizes expected
+  utility \textbf{if followed}. When we say if, you know we are
+  talking about the fucking \textbf{uncertainty}.
+\item An \textbf{explicit} policy defines a reflex agent. 
+\item \textbf{Reflex} an action that is performed as a response to a
+  stimulus and without conscious thought. 
+\item Expectimax did \textbf{not} compute entire policies, solutions,
+  ideas, paths whatsoever. It computed the action for a single state
+  only. But \textbf{IT WORKS}.
+\item What \textbf{Markov} did is just to remove the redundancy so
+  that we can use \textbf{minimal} information to \textbf{render} the
+  things down.
+\item \textbf{Your models are never going to be perfect.}
+\item Each MDP state projects an expectimax-like search tree.
+\item \textbf{Utilities of Sequences} Ask questions: more or less; now
+  or later (mind the \textbf{discounting}). 
+\item \textbf{Discounting} values of rewards (may and usually so)
+  decay exponentially. It helps our algorithms \textbf{converge}!!!
+\item \textbf{Infinite Utilities} Finite horizon, discounting or
+  absorbing state (like ``overheated'' for racing). In general we will
+  have \textbf{discounts}.
+\item \textbf{Policy} Mapping from actions to states. \textbf{Utility}
+  sum of (discounted) rewards.
+\item \textbf{Values of States} fundamental operation: compute the
+  (\textbf{expectimax}) value of a state. 
+  \begin{itemize}
+  \item Expected utility under optimal action.
+  \item Average sum of (discounted) rewards.
+  \item This is \textbf{just} what expectimax computed.
+  \end{itemize}
+\item Recursive definition of values:
+  \begin{itemize}
+  \item $V^{*}(s)={\displaystyle\max_{a}}*Q^{*}(s,a)$
+  \item The value of a state is the \textbf{max} over all the
+    \textbf{actions} available to you.
+  \item $Q^{*}(s,a)=\sum_{s'}T(s,a,s')[R(s,a,s')+\gamma V^{*}(s')]$
+  \item We are going to get a reward in the next time step, and a
+    \textbf{future} reward. They are going to be \textbf{weighted} by
+    the \textbf{relative probabilities} that come from our
+    \textbf{transition function}. Mind the future shit, so we need to
+    add a \textbf{discount} on the future, because it's not what we
+    get\@ NOW.
+  \end{itemize}
+\item States are repeated. Tree goes on forever. Note: deep parts of
+  the tree eventually \textbf{does not} matter if $\gamma < 1$.
+\item \textbf{Time-Limited Values} $V_{k}(s)$ is the \textbf{optimal}
+  value of $s$ if the game ends in $k$ more time steps. Equivalently,
+  it's what a \textbf{depth-k} expectimax would give from s. (Namely,
+  life is short, PLEASE do not loop/recur forever, please\ldots)
+\item Because we are just truncating, we are just ending the game---we
+  \textbf{do not} need an evaluation function. Because \textbf{IT JUST
+  STOPS}.
+\item So it is a \textbf{trade-off} of how many states you have, how
+  connected they are and how deeply you want to go into the tree.
+\item Basic idea: approximations get refined towards optimal
+  values. (When we say refine, we can also say, you guessed it,
+  \textbf{filtering}.) 
+\item \textbf{Convergence}
+  \begin{itemize}
+  \item If the tree has maximum depth M, then $V_{M}$ holds the actual
+    untruncated values. \textbf{I have done the EM search} and any
+    further iteration/recursion will do nothing (Namely, their
+    \textbf{reward}, return, gains, utilities are considered,
+    regarded, or set $0$, so it's ``mathematically'' dead, then we do
+    \textbf{not} need to, you name it, do calculations \textbf{any
+      more}). 
+  \item If the discount is \textbf{less than} 1.
+  \item The last layer is at best all $R_{\max}$.
+  \item The last layer is at worst $R_{\min}$.
+  \item But everything is \textbf{discounted} by $\gamma^{k}$ that far
+    out. 
+  \item So $V_{k}$ and $V_{k+1}$ are \textbf{at most} $\gamma^{k} \max
+    |R|$ different.
+  \item So as $k$ increases, the values converge because the
+    \textbf{differences} are \textbf{smaller than smaller}. After all
+    these ``smalling'' processes, it will die, or at least looks like
+    ``dead''. That word means there is \textbf{no significant} further
+    growth. 
+  \end{itemize}
+\end{itemize}
+
+\subsection{Markov Decision Processes Continued}
+\label{sec:mark-decis-proc-1}
+
+\begin{itemize}
+\item Oh! That's their probability of landing a $s'$.
+\item \textbf{Policy} A map (surely it's with Python and Lisp) of
+  states to actions.
+\item Your transition function tells you what the \textbf{likelihoods}
+  are. 
+\item {\color{red} \textbf{Rewards} are instantaneous and \textbf{values} are
+    accumulative.} It's an very important distinction. 
+\item \textbf{How to be optimal:} Take correct first action; Keep
+  being optimal. It's just some kind of recursive procedures, or some
+  ``iterative dynamic programming''. Holy Jesus Lord, \textbf{they are
+  actually fuckingly the same thing, will you be able to understand}?
+  This of course is in terms of \textbf{implementation}. And isn't
+  this concept called ``greedy'' in algorithm book?
+\item Bellman equations \textbf{characterize} the optimal values; the
+  \textbf{fuck yourself} algorithm ``computes'' them. Because of this,
+  there is now a \textbf{real recursion}. It bottoms out at $0$. And
+  suddenly we have a notion of times-attached.
+\item Expectimax trees max over all actions to compute the
+  \textbf{optimal} values.
+\item Turn recursive Bellman equations into \textbf{updates}. Namely,
+  it's just the fucking value iteration.
+\item Without the maxes, the Bellman equations are just a
+  \textbf{linear system}.
+\item $\pi^{*}(s)={\displaystyle argmax_{a}}\Sigma
+  T(s,a,s')[R(s,a,s')+\gamma V^{*}(s')]$ This is called \textbf{policy
+  extraction}, since it gets the policy implied by the values. This is
+  also called \textbf{reconstruct}.
+\item $\pi^{*}(s)=argmax_{a}Q(s,a)$ Computing actions from
+  \textbf{Q-Values} is completely trivial. And it is much easier to
+  select from q-values than values.
+\item What value iteration does, is essentially mimics Bellman
+  Equation. Problem: It's slow---$O(S^{2}A)$ per iteration. The
+  ``max'' at each state rarely changes. And more importantly, the
+  \textbf{policy} often converges \textbf{long before} the values.
+\item \textbf{Policy Iteration (Or Recursion)} Evaluation: for fixed
+  current policy $\pi$, find values with policy
+  evaluation. Improvement: for fixed values, get a better policy by
+  \textbf{argmax}. 
+\item Another view (which is more practical) is thinking we are doing
+  \textbf{value iteration} but on most rounds we just go with the \textbf{last
+    action} that optimize the state, rather than considering them all.
+\item They differ only in whether we plug in a fixed policy or max
+  over actions. Namely, these all look (and essentially are) the same.
+\item That wasn't planning! It was learning. There was an MDP, but you
+  couldn't solve it with just \textbf{purely pre-computation}. (It's
+  all about the computation, but orders, namely, prior and posterior
+  do matter.)
+\item Important ideas in reinforcement learning (in control theory
+  bitches, they call the \textbf{crap negative/positive feedback
+    loop}): 
+  \begin{itemize}
+  \item Exploration: you \textbf{have to} (as is with my situation, I
+    have to learn, to prove to others, and to be strong) try unknown
+    actions to get information.
+  \item Exploitation: eventually, you have to \textbf{use what you
+      know}
+  \item Regret: even if you learn intelligently, you \textbf{make
+      mistakes}. 
+  \item \textbf{Sampling} because of chance, you have to try things
+    \textbf{repeatedly}. 
+  \item \textbf{Difficulty} learning can be much harder than solving a
+    known MDP. (Comment: maybe that's why the Machine Learning SIGs
+    are recruiting more and more, say, members/noobs?)
+  \end{itemize}
+\item Your \textbf{lack of knowledge} then triggers a much more
+  difficult reasoning problem about \textbf{HOW} you should act. (Math
+  buddies tells you WHAT. Programmers do the HOW, and a few true
+  geniuses learn/are forced to ask WHY.) ``Why OSX is more fancy? Why
+  Windows has such a large market share, etc.''
+\item \textbf{How you solve an MDP when you don't know which MDP you
+    are solving?} Eggs first? Or Chicken first?
+\end{itemize}
+
+\subsection{Probability}
+\label{sec:probability}
+
+\begin{itemize}
+\item You deal with integrals rather than summations. 
+\item Size of distribution if $n$ variables with domain sizes $d$?
+\item A probabilistic model is a \textbf{joint distribution} over a
+  set of random variables.
+\item Marginal distributions are sub-tables which eliminate
+  variables. 
+\item \textbf{Sanity Check}.
+\item $P(a|b)=\frac{P(a,b)}{P(b)}$ ``Hey! I know b is happening. Then
+  you can, in this way calculate the \textbf{probability} of a is ALSO
+  happening.''
+\item \textbf{Conditional Distribution} is a consequence of our
+  \textbf{Joint Distribution}. (Mother and Son relationship.)
+\item \textbf{Probabilistic Inference} compute a desired probability
+  from other \textbf{known} probabilities.
+\item Inference by enumeration: select the entries \textbf{consistent} with the
+  evidence; sum out H to get joint of Query and evidence; normalize.
+\end{itemize}
+
+\subsection{Markov Models}
+\label{sec:markov-models}
+
+\begin{itemize}
+\item $P(y)P(x|y)=P(x,y)$ derived from conditional probabilities. We
+  specify a marginal and a conditional, then we get a \textbf{joint
+    distribution}.
+\item \textbf{The Chain Rule} for joint probability distribution:
+  $P(x_{1},x_{2},\ldots,x_{n})=\Pi_{i}P(x_{1}|x_{1}\ldots x_{i-1})$
+\item $P(x|y)=\dfrac{P(y|x)}{P(y)}P(x)$ Both of them equal to the
+  \textbf{joint probability}. And this fancy refactored formula is
+  called (you guessed it) \textbf{Bayes' Rule}.
+\item Let us build one conditional from its \textbf{reverse}.
+\item What the heck is ``given z'', ``given x'' or ``given y'' in the
+  probabilistic reasoning, or statistic crap? ``They will bend to my
+  command!'' Or in a more functional flavor, \textbf{Realm of
+    Racket}. In set theory, that's called ``realm of z'', ``realm of
+  x'', etc.
+\item \textbf{Conditional Independence} is our most basic and robust
+  form of knowledge about uncertain environments. $X$ is conditionally
+  independent of $Y$ given $Z$ \textbf{if and only if}:
+  $$ \forall x,y,z: P(x,y|z)=P(x|z)P(y|z)$$ or equivalently,
+  \textbf{if and only if}:
+  $$\forall x,y,z:P(x|z,y)=P(x|z)$$
+\item {\color{red}\textbf{If I destroy you, what business is that of
+      yours?}}
+\item Why I write  crap sentences like the one above? Do not you see
+  in the second form that $y$ is ``destroyed''?
+\item Often, we want to \textbf{reason about a sequence} of
+  observations. 
+\item Markov Models \textbf{implied conditional independencies} Past
+  variables independent of future variables \textbf{given the
+    present}.
+\item \textbf{Stationary Distribution} The distribution we end up with
+  is called stationary distribution $P_{\infty}$ of the chain. It
+  satisfies:
+  $P_{\infty}(X)=P_{\infty+1}(X)=\sum_{x}P(X|x)P_{\infty}(x)$. It just
+  says that this \textbf{function converges}. It converges! There is
+  an END!\@
+\end{itemize}
+
+
+\subsection{HMMs and Particle Filtering}
+\label{sec:hmms-part-filt}
+
+\begin{itemize}
+\item Often, we want to \textbf{reason about a sequence} of
+  observations. Then we need to introduce \textbf{time} (or space)
+  into our models.
+\item A \textbf{Markov Model} is a chain-structured BN.
+\item How we could mathematically show what is \textbf{intuitively}
+  true here, in Markov models.
+\item ``The distribution on the year 3000 turns out not to depend on
+  the possibility of today's at all.'' It's just a \textbf{property} of
+  transition function/matrix.
+\item When running Gibbs sampling long enough we get a sample from the
+  desired distribution. The \textbf{long enough} does indeed implies
+  \textbf{infinity}. 
+\item I know two things, how the world changes in every time-step. And
+  some kind of reading every step to help me. Namely, you observe
+  outputs (effects) at each time step.
+\item ``This is your assumptions about the world.''
+\item HMMs have two important independence properties: Markov hidden
+  process, future \textbf{depends} on past \textbf{via the
+    present}. More importantly, current observation independent of
+  \textbf{all else} given current state.
+\item The evidence variables are \textbf{conditionally independent}
+  given the HIDDEN state.
+\item \textbf{Hidden State} Usually the thing you want to figure
+  out. \textbf{Evidence Variable} The thing you observe.
+\item We all know about Bayes Nets. You write down the things you
+  \textbf{know}, and \textbf{figure out} the things you don't know.
+\item Passage of Time, basic idea, beliefs get ``pushed'' through the
+  \textbf{transitions}. IMHO, just two-step Bayes calculation, you
+  have Evidence, then you reason about $X_{1}$. Since $E_{1}$ has no
+  direct relation with $X_{2}$, the whole remaining processes can
+  \textbf{only} done via $X_{1}\rightarrow X_{2}$.
+\item Beliefs can be ``reweighted'' by likelihood of evidence.
+\item More particles (THEY ARE JUST samples), more accuracy.
+\item This is like prior sampling---samples' frequencies reflect the
+  transition probabilities. \textbf{If enough} samples, \textbf{close}
+  to exact values before and after.
+\end{itemize}
+
+\subsection{Application of HMMs}
+\label{sec:application-hmms}
+
+\begin{itemize}
+\item As time passes, the distribution can \textbf{change}. It depends
+  on the \textbf{model} we have for \textbf{how} time passes.
+\item \textbf{Dynamic Bayes Nets} We want to track multiple variables
+  over time, using \textbf{multiple sources of evidence}.
+\item Repeat a fixed Bayes net structure at each time.
+\item Forward Algorithm (Sum)
+  $f_{t}[x_{t}]=P(x_{t},e_{1:t})=P(e_{t}|x_{t})\Sigma_{x_{t-1}}P(t_{t}|x_{t-1})f_{t-1}[x_{t-1}]$ 
+\item Viterbi Algorithm (Max)
+  $m_{t}[x_{t}]=\max_{x_{1}:t-1}P(x_{1:t-1},x_{t},e_{1:t})$
+\item It costs money to run, well, \textbf{computation}.
 \item 
+\end{itemize}
+
+
+\section{Learning}
+\label{sec:learning}
+
+
+\subsection{Reinforcement Learning 1}
+\label{sec:reinf-learn-1}
+
+\begin{itemize}
+\item Basic idea:
+  \begin{itemize}
+  \item Receive feedback in the form of \textbf{rewards}
+  \item Agent's utility is defined by the \textbf{reward function}
+  \item Must (learn to) act so as to \textbf{maximize expected
+      rewards}
+  \item Rule of thumb: All learning is based on what? \textbf{Observed
+    samples of outcomes}. Namely, weighing the elephant. When you take
+  an action, you see what happens. But you \textbf{DO NOT} see
+  everything that might happen.
+  \end{itemize}
+\item New twist: don't know Transition function or reward
+  function. Must actually \textbf{try actions and states} out to
+  learn. 
+\item Offline (MDPs). Online (Reinforcement Learning). (And then
+  pretend that it is true.)
+\item \textbf{Model-Based Idea} Learn an approximate model based on
+  experiences (namely, empirical crap). Solve for values \textbf{as
+    if} the learned model \textbf{were} correct. (WHAT IF it is not
+  correct? Then go fuck yourself.) This is, indeed how the
+  state-of-the-art data mining, machine learning, and maybe cock
+  sucking works.
+\item Model-Based Learning: Learn the empirical MDP model, then solve
+  the \textbf{learned} MDP.
+\item $E[A]=\sum_{a}P(a)\cdot a$ This is $100\%$ valid when we
+  \textbf{know} $P(A)$. Without $P(A)$, we can \textbf{try to} collect
+  samples $[a_{1},a_{2},\ldots,a_{N}]$.
+  \begin{itemize}
+  \item For Model Based, we have $\hat{P}(a)=\dfrac{num(a)}{N}$
+    Eventually you learn the right model.\\[1pt]
+  \item For Model Free, we just do $E[A]\simeq \dfrac{1}{N}\sum_{i}
+    a_{i}$ Samples appear with the \textbf{right frequencies}.
+  \end{itemize}
+\item Passive Reinforcement Learning: Goal is to learn the
+  \textbf{state values} by inputting/carrying out a fixed policy
+  (namely, action/signal).
+\item We are missing something! But in the end, it's an average. It's
+  an \textbf{average} of a bunch of things, each thing is a
+  \textbf{one-step reward} plus a \textbf{discounted future} from
+  \textbf{previous computation}. (Aren't math and natural language
+  description sucking? Indeed they are.)
+\item \textbf{Sample-Based Policy Evaluation} Take samples of outcomes
+  $s'$ (by doing the ACTION!) and \textbf{average}.
+\item Big Idea: Learn from every experience. Namely: Update $V(s)$
+  each time we experience a transition $(s,a,s',r)$. How?
+  $V^{\pi}\leftarrow (1-\alpha)V^{\pi}(s)+(\alpha)*sample$ The fucking
+  $\alpha$ is called learning rate.
+\item You can think of that as an
+  \textbf{error}. $V^{\pi}(s)\leftarrow V^{\pi}(s)+\alpha (sample -
+  V^{\pi}(s))$ Adjust your estimate in  the direction of error by some
+  small step size of $\alpha$. In communication, they call the crap
+  \textbf{Affine Projection} algorithm.
+\item Running interpolation update: $\bar{x}_{n}=(1-\alpha)\cdot
+  \bar{x}_{n-1}+\alpha\cdot x_{n}$
+\item \textbf{Active Reinforcement Learning} {\color{red} learn the
+    optimal policy/values}
+\item But Q-Values are \textbf{more useful} (how the heck do you know
+  that it is more useful? By trials and errors indeed.)
+\item
+  $Q_{k+1}(s,a)\leftarrow\sum_{s'}T(s,a,s')[R(s,a,s')+\gamma\displaystyle{\max_{a'}}Q_{k}(s',a')]$
+  This crap is called sample-based Q-value recursion/iteration. Key
+  idea: instead of looking at \textbf{two consecutive} {\color{red}
+    values}, let us look at \textbf{two consecutive}
+  Q-values. (Namely, because they are ``more useful''. Practically,
+  they are relatively easy to, you guessed it, COMPUTE.)
+\item Q-Learning converges to \textbf{optimal} policy, even if you are
+  acting \textbf{suboptimally}! Caveats:
+  \begin{itemize}
+  \item You have to explore enough.
+  \item You have to eventually make the learning rate small enough.
+  \item Basically, in the limit, it doesn't matter how you select
+    actions. (Note: In the end, you will learn that cliff jumping is
+    bad.)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Reinforcement Learning 2}
+\label{sec:reinf-learn-2}
+
+\begin{itemize}
+\item \textbf{Big idea} Compute all averages over $T$ using sample
+  outcomes, namely by trials and errors.
+\item The problem is, that I \textbf{do not} know the transition
+  function.
+\item \textbf{Exploration} You try things, which may be
+  disasters. Namely, you just do not know the \textbf{pits} until you
+  try it.
+\item \textbf{Exploitation} You do the things which currently appear
+  to be good.
+\item How to explore? Simplest, random actions
+  ($\epsilon$-greedy). Possible solution to problems: lower $\epsilon$
+  over time; use exploration functions.
+\item One sample exploration function is: take a value estimate $u$
+  and a visit count $n$, returns an optimistic utility:
+  $f(u,n)=u+k/n$. ``You try things that are known to lead to things
+  that are unknown.''
+\item \textbf{Regret} is a measure of your total mistake cost: the
+  difference (namely, do a comparison or subtraction or
+  differentiation, whatsoever you like.) between your
+  expected rewards, including youthful suboptimality, AND
+  optimal (expected) rewards.
+\item Minimizing regret goes beyond learning to be optimal---it
+  requires \textbf{optimally learning to be optimal}. (Comment:
+  Regret, balabala, value iteration all such and such are fancy names
+  given by \textbf{Computer Scientists} to ease the fear of dealing
+  with TONS of mathematical equations. Namely, to concrete those
+  fucking math abstractions---equations, inequations.) All in all,
+  these are the ABSTRACTION (simulation, modeling, whatsoever) of our
+  WORLD.   
+\item Anyway, those models do work, under certain circumstances. 
+\item Instead and In reality we want to \textbf{generalize}:
+  \begin{itemize}
+  \item Learn about some small number of training states from
+    experience (or part of the real states, namely, test states)
+  \item Generalize that experience to new, similar situations
+  \item This is a fundamental idea in \textbf{machine learning},
+    namely, build a MODEL or heuristic, and see if it works.
+  \end{itemize}
+\item You are going to learn faster if you do not have to
+  \textbf{repeat} lessons in every \textbf{similar state}.
+\item \textbf{Features} are functions from states to real numbers
+  (often 0/1) that capture \textbf{important} properties (namely,
+  CORRECTLY describes) of the state.
+\item ``Give me a transition so that I can learn.''
+\item ``You compute how wrong you were, and you try to make that
+  number less.''
+\item Adjust \textbf{weights} of active features.
+\item Q-learning priority: Get Q-values close (modeling). Action
+  selection priority: get ordering of Q-values right
+  (prediction). Solution: learn policies that maximize
+  \textbf{rewards}, not the value that predict them. Namely, care more
+  about PREDICTION. More namely, care more about, well, you named it,
+  ``FUTURE''.
+\item Better methods exploit lookahead structure, sample wisely,
+  change parameters\ldots
 \end{itemize}
 \end{document}
 

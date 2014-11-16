@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  9 NOV 2014 03:43
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  16 NOV 2014 03:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -239,14 +239,53 @@ Underfull \hbox (badness 1448) in paragraph at lines 315--318
 []\OT1/cmr/m/n/10 Players usu-ally take turns; Ac-tions may de-pend on
  []
 
-[3] (./Review-Notes.aux) ) 
+[3] [4]
+Underfull \hbox (badness 1082) in paragraph at lines 566--570
+\OT1/cmr/m/n/10 prove-ment: for fixed val-ues, get a bet-ter pol-icy by
+ []
+
+[5]
+Underfull \hbox (badness 1502) in paragraph at lines 634--636
+[]\OT1/cmr/bx/n/10 The Chain Rule \OT1/cmr/m/n/10 for joint prob-a-bil-ity dis-
+tri-bu-tion:
+ []
+
+[6]
+Underfull \hbox (badness 2080) in paragraph at lines 689--693
+[]\OT1/cmr/m/n/10 HMMs have two im-por-tant in-de-pen-dence prop-er-ties:
+ []
+
+
+Underfull \hbox (badness 3815) in paragraph at lines 720--722
+[]\OT1/cmr/m/n/10 Forward Al-go-rithm (Sum) $[]\OML/cmm/m/it/10 f[]\OT1/cmr/m/n
+/10 [\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ] = \OML/cmm/m/it/10 P\OT1/cmr/m/n/10 
+(\OML/cmm/m/it/10 x[]; e[]\OT1/cmr/m/n/10 ) =[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--725
+[]\OT1/cmr/m/n/10 Viterbi Al-go-rithm (Max) $[]\OML/cmm/m/it/10 m[]\OT1/cmr/m/n
+/10 [\OML/cmm/m/it/10 x[]\OT1/cmr/m/n/10 ] =[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 795--801
+\OT1/cmr/m/n/10 This crap is called sample-based Q-value re-cur-
+ []
+
+[7] [8] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2445 strings out of 493727
- 29891 string characters out of 6147890
- 104261 words of memory out of 5000000
- 5775 multiletter control sequences out of 15000+600000
+ 2456 strings out of 493727
+ 30104 string characters out of 6147890
+ 105357 words of memory out of 5000000
+ 5786 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,5n,35p,235b,172s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,35p,235b,176s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (3 pages).
+Output written on Review-Notes.pdf (8 pages).
