@@ -30,6 +30,7 @@
     "sec:markov-models"
     "sec:hmms-part-filt"
     "sec:application-hmms"
+    "sec:bayes-nets:-repr"
     "sec:learning"
     "sec:reinf-learn-1"
     "sec:reinf-learn-2")))
