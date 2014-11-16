@@ -82,7 +82,20 @@
     -
 
 *** backward-chaining algorithm
-    - 
+    -
+
+** 20141022 Resolution and Classical Planning
+
+
+** 20141102 Probabilistic Reasoning
+
+*** 
+
+** 20141106 Bayesian Networks
+
+*** 
+
+
 
 
 

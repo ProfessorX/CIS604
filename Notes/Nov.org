@@ -1,0 +1,12 @@
+
+* November 2014
+
+** 20141109 Bayesian Networks
+
+*** Implied Independence
+    - A path if active if each triple is active.
+    - No actie path means independence.
+    -
+
+*** Probabilistic Inference
+    - 
