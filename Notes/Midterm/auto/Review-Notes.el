@@ -31,6 +31,7 @@
     "sec:hmms-part-filt"
     "sec:application-hmms"
     "sec:bayes-nets:-repr"
+    "sec:bayes-nets:-indep"
     "sec:learning"
     "sec:reinf-learn-1"
     "sec:reinf-learn-2")))
