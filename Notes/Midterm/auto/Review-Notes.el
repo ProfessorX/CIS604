@@ -32,6 +32,8 @@
     "sec:application-hmms"
     "sec:bayes-nets:-repr"
     "sec:bayes-nets:-indep"
+    "sec:bayes-nets:-infer"
+    "sec:bayes-nets:-sampling"
     "sec:learning"
     "sec:reinf-learn-1"
     "sec:reinf-learn-2")))

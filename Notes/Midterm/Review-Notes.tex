@@ -768,6 +768,69 @@
 \label{sec:bayes-nets:-indep}
 
 \begin{itemize}
+\item Why KSA is the best country in the world?
+\item Important for modeling: understand assumptions made when
+  choosing a Bayes net graph
+\item $P(x,y,z)=P(x)P(y|x)P(z|y)$ Evidence along the chain ``blocks''
+  the influence.
+\item Observing the cause blocks influence between effects.
+\item The third case: it's backwards from the other cases. Observing
+  an \textbf{effect} influence between possible causes.
+\item Any complex example can be broken into repetitions of three
+  canonical cases.
+  \includegraphics[scale=0.36]{snapshot128}
+  \includegraphics[scale=0.36]{snapshot127}
+  \centering{\includegraphics[scale=0.36]{snapshot129}}
+\item \textbf{Reachability} Shade evidence nodes, look for paths in
+  the resulting graph
+\item Question: Are $X$ and $Y$ conditionally independent given
+  evidence variable $Z$? \textbf{Yes}, if $X$ and $Y$ are
+  ``d-separated'' by $Z$. How-to? Consider all undirected paths from
+  $X$ to $Y$, if there is \textbf{no active paths}, we get (conditional)
+  independence. Namely, if ALL paths are inactive, then the
+  (conditional) independence is guaranteed.
+\item All it takes to block a path is \textbf{a single INACTIVE}
+  segment.
+\item A Bayes Net's joint distribution may have further (conditional)
+  independence that is not detectable until you inspect its specific
+  distribution. 
+\end{itemize}
+
+
+\subsection{Bayes Nets: Inference}
+\label{sec:bayes-nets:-infer}
+
+\begin{itemize}
+\item \textbf{Inference} Calculating some useful quantity from a joint
+  probability distribution.
+\item Core of this part is to find \textbf{more effective ways} to do
+  ``inference by enumeration''.
+\item \textbf{Variable Elimination} Interleave joining and
+  marginalizing. 
+\item Marginalization: Take a factor and sum out a variable. Aka it
+  shrinks a factor to a smaller one; in Communication, they say it's a
+  \textbf{projection} operation. (In math, they say let's do
+  \textbf{differentiation}.) 
+\item $A+\bar{A}=1$ and $A\cdot\bar{A}=0$
+\item All we are doing is exploiting \textbf{math equations/tricks}
+  to? Improve \textbf{computational efficiency}. So that rolls back to
+  my good old question---What if we have a computer with infinite
+  \textbf{computation power}? What would we do with that?
+\item The computational and space complexity of variable elimination
+  is determined by the largest factor.
+\item If we can answer $P(z)$ equals to $0$ or not, we answered the
+  3-SAT problem has a solution. Hence \textbf{inference} in Bayes Net
+  is \textbf{NP-hard}. \textbf{No known efficient} probabilistic
+  inference in general.
+\item A polytree is a directed graph with \textbf{no undirected}
+  cycles. 
+\item Remember to pick the ordering of elimination that is EFFICIENT.
+\end{itemize}
+
+\subsection{Bayes Nets: Sampling}
+\label{sec:bayes-nets:-sampling}
+
+\begin{itemize}
 \item 
 \end{itemize}
 
