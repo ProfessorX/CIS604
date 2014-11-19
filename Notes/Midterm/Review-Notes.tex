@@ -831,9 +831,81 @@
 \label{sec:bayes-nets:-sampling}
 
 \begin{itemize}
-\item 
+\item \textbf{Sampling} is just a way to do approximate inference. But
+  it can also help you ``know'' an unknown distribution.
+\item How do you sample in an uniform way over $[0,1)$.
+\item Sampling in Bayes Nets: prior, rejection, likelihood weighting,
+  Gibbs.
+\item If you know the query you are going to answer, you can upgrade
+  to \textbf{rejection sampling}.
+\item Problems with rejection sampling: if evidence is
+  \textbf{unlikely}, rejects lots of samples; evidence not exploited
+  as you sample.
+\item Key idea in likelihood weighting: if it is an evidence (evidence
+  means true, in this method we \textbf{force it to be true} with a
+  lower ``class'') you just fix it (FORCE TRUE), no sampling
+  involved. But you correct (``compensate'') for the fact that you
+  didn't sample by ``re-weighting'' (namely, revolution. You are NOT
+  happy, so you want to re-weight the society.) the sample.
+\item Problems with likelihood weighting. Evidence influences the
+  choice of downstream variables, but not \textbf{upstream ones}.
+\item We would like to consider evidence when we sample every
+  variable. ``Why not use Gibbs sampling?''
+\item Gibbs sampling is a special case of more general methods called
+  \textbf{Markov Chain Monte Carlo} methods. Namely, randomized
+  methods.
+\item You may read about Monte Carlo methods! Well, they are just
+  \textbf{sampling}. 
+\item \textbf{Gibbs Sampling} procedure: keep track of a full
+  instantiation $(x_{1},x_{2},x_{3},\ldots,x_{n})$. Start with an
+  arbitrary instantiation with the evidence. Sample one variable at a
+  time, conditioned on \textbf{all the rest}, but \textbf{keep
+    evidence fixed}. Most important of all, keep repeating this for a
+  long time.
+\item \textbf{Correct Distribution} $P(unknown|known)$.
 \end{itemize}
 
+
+\subsection{Decision Diagrams and Value of Information}
+\label{sec:decis-diagr-value}
+
+\begin{itemize}
+\item OUR GOAL\@: Choose the action which maximizes the expected utility
+  given the evidence.
+\item \textbf{$\Sigma$} Screw those fucking $\Sigma$s you see ALMOST
+  everywhere in books, slides, articles, journals. It's just a fancy
+  name/notation for \textbf{Expectation} with some ``domain-specific''
+  distribution of probabilities. For \textbf{pdf}s, you can almost
+  (not in everycase, but most case you can) \textbf{visualize} every
+  one of them. (For high dimensional buddies, we do the
+  selection/extraction/filtering.)
+\item Why do we need MEU? Because this course is named
+  \textbf{Computational Rationality}.
+\item \textbf{Value of Information} Compute value of acquiring
+  evidence. ``But you are right that getting information equals to
+  (they timidly saying corresponds to) observe the evidence in the
+  Bayes Nets.'' See! That's how the academia operates, well, in
+  general. 
+\item $VPI(E'|e)=(\Sigma_{e'}MEU(e,e')P(e'|e))-MEU(e)$ Just remember
+  or visualize the forecast/umbrella case in your mind, then forget
+  this mind-sucking equation.
+\item \textbf{In AI course, reasoning part} Information corresponds to
+  the \textbf{observation (fix, given or whatsoever)} of a node in the
+  decision network. If data is ``noisy'' that just means we
+  \textbf{don't} observe the original variable (bad shooting of your,
+  you named it, sperms), but \textbf{another variable} which is a
+  noisy version of the original one. (More intuitively, you're WRONG.)
+\item \textbf{POMDPs} are MDPs over \textbf{belief states} b (the
+  distribution over S).
+\item General solutions map belief functions to actions, JUST GO
+  DYNAMIC PROGRAMMING/FUCKING RECURSION/MAP REDUCE: 
+  \begin{itemize}
+  \item Can divide regions of belief space (set of belief functions)
+    into policy regions (gets complex quickly).
+  \item Can build approximate policies using discretization methods.
+  \item Can factor belief functions in various ways.
+  \end{itemize}
+\end{itemize}
 \section{Learning}
 \label{sec:learning}
 

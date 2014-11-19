@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  17 NOV 2014 22:22
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  19 NOV 2014 04:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -283,24 +283,24 @@ Overfull \hbox (0.75403pt too wide) in paragraph at lines 779--784
  [] 
  []
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 854--856
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 936--938
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 885--891
+
+Underfull \hbox (badness 10000) in paragraph at lines 967--973
 \OT1/cmr/m/n/10 This crap is called sample-based Q-value re-cur-
  []
 
-[9] (./Review-Notes.aux) ) 
+[9] [10] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2472 strings out of 493727
- 30287 string characters out of 6147889
- 105388 words of memory out of 5000000
- 5792 multiletter control sequences out of 15000+600000
+ 2474 strings out of 493727
+ 30336 string characters out of 6147889
+ 105411 words of memory out of 5000000
+ 5794 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,5n,35p,235b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,5n,35p,235b,232s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (9 pages).
+Output written on Review-Notes.pdf (10 pages).

@@ -34,6 +34,7 @@
     "sec:bayes-nets:-indep"
     "sec:bayes-nets:-infer"
     "sec:bayes-nets:-sampling"
+    "sec:decis-diagr-value"
     "sec:learning"
     "sec:reinf-learn-1"
     "sec:reinf-learn-2")))
