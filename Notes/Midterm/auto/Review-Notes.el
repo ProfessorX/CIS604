@@ -37,5 +37,9 @@
     "sec:decis-diagr-value"
     "sec:learning"
     "sec:reinf-learn-1"
-    "sec:reinf-learn-2")))
+    "sec:reinf-learn-2"
+    "sec:mach-learn-naive-1"
+    "sec:mach-learn-perc"
+    "sec:mach-learn-kern"
+    "sec:advanc-appl-nlp")))
 

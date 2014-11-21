@@ -1050,6 +1050,187 @@
 \item Better methods exploit lookahead structure, sample wisely,
   change parameters\ldots
 \end{itemize}
+
+\subsection{Machine Learning: Naive Bayes}
+\label{sec:mach-learn-naive-1}
+
+\begin{itemize}
+\item \textbf{Up until now} how to use a model to make optimal
+  decisions. 
+\item \textbf{Machine Learning} how to acquire a model from
+  data/experience. Learning parameters/structure/hidden concepts.
+\item Requirements: probabilities, BN graphs, clustering, etc.
+\item \textbf{Classification} given inputs $x$, predict labels (THAT'S
+  JUST A FUCKING FANCY NAME for classes) $y$.
+\item \textbf{Model-Based Classification} Build a model where both
+  labels and features are random variables. Instantiate any observed
+  features. Then query for the distribution of the label conditioned
+  on the features.
+\item \textbf{Inference for Naive Bayes} Compute posterior
+  distribution over label variable $Y$ (big Y is just a
+  vector/set/domain/pussy of all possible elements it \textbf{the
+    labels} could be, More mathematically
+  $Y=(y_{1},y_{2},y_{3},\ldots,y_{n})$). Sum to get probability of
+  evidence. And, according to the ``formalization'' of Bayes Rule,
+  normalize your results.
+\item These probabilities are collectively called the
+  \textbf{parameters} of the model (did any one of the words remind
+  you of the good old days sucking CONTROL THEORY\@? If true, you HIT
+  it.) And these \textbf{parameters} are denoted by $\theta$ (THAT'S
+  JUST HOW ACADEMIA did it. You can name it America/China/Filippino or
+  whatsoever.) 
+\item Magical parameters often come from training data counts. In
+  practice, they are the ``trials and errors''.
+\item \textbf{Important Concepts in Machine Learning} Data is just
+  labeled instances, e.g. emails marked as spam/not spam. Features:
+  attribute-value pairs which characterize each $x$ (small $x$, the
+  element of Set $S$). 
+\item \textbf{Experimentation Cycle} Learn parameters on
+  \textbf{training set}; Fine tune parameters on \textbf{held out}
+  set. And last but not least, compute accuracy on \textbf{test
+    set}. Very important: YOU ARE NEVER PERMITTED to \textbf{peek} at
+  the test set. Or that would result in \textbf{overfitting}.
+\item If you are given the final exam, you could figure out what all
+  those answers are but you haven't really learn the \textbf{general
+    concepts}. 
+\item Relative frequency parameters will \textbf{overfit} the training
+  data. As an extreme case, imagine using the entire email as the only
+  feature. So to generalize better, we need to \textbf{smooth} or
+  \textbf{regularize} the estimates.
+\item Elicitation: ask a human.
+\item \textbf{Empirically} use the training data. This is the fucking
+  learning process. Example: look at the empirical rate of that
+  value. $P_{ML}(x)=\dfrac{count(x)}{total~samples}$ And the
+  likelihood of the data is: $L(x,\theta)=\Pi_{i}P_{\theta}(x_{i})$.
+\item \textbf{Maximum Likelihood} Relative frequencies (as per above)
+  are the maximum likelihood estimates. 
+  $$\theta_{ML}=arg_{\theta}\max P(X|\theta)$$
+  Another option is to consider the most likely parameter value given
+  the data
+  $$\theta_{MAP}=arg_{\theta}\max P(\theta|X)=arg_{\theta}\max
+  P(X|\theta)P(\theta)$$ 
+\item ``Given the data, what is the most likely MODEL for our
+  samples.'' Namely, we can try different \textbf{prior probabilities}
+  and see which one works \textbf{better}.
+\item \textbf{Laplace's estimate} Pretend you saw every outcome
+  \textbf{one more time} than you actually did.
+\item For real classification problems, \textbf{smoothing} is
+  critical.
+\item We should be able to add these information sources as
+  \textbf{new variables} in the Naive Bayes model!
+\end{itemize}
+
+
+\subsection{Machine Learning: Perceptrons}
+\label{sec:mach-learn-perc}
+
+\begin{itemize}
+\item Perceptron has a way to kind of better tune-in of different
+  types of features and \textbf{still get a (relatively) good
+    result}. 
+\item Naive Bayes models can incorporate a variety of features, but
+  tend to do best in \textbf{homogeneous cases} (e.g. all features are
+  word occurrences.)
+\item As you can see in Machine Learning, most of the time
+  inputs are \textbf{feature values}. Each feature has a
+  \textbf{weight}. Sum is the \textbf{activation}. 
+\item Learning in this case: figure out the weight vector from
+  \textbf{examples}. 
+\item \textbf{Weights} in perceptron. For each training instance,
+  classify with current weights; if correct, no change! if wrong,
+  adjust the weight vector. ``How to adjust the weight vector?''
+  ``STFU.'' 
+\item \textbf{Multiclass} When the negative class has weight $0$, we
+  get binary class.
+\item For Multiclass Decision, the prediction with \textbf{highest
+    score} wins.
+\item You do not stop at \textbf{one pass} until everything
+  converges. Namely, try all possible stuff and see which one is
+  \textbf{most likely}.
+\item \textbf{Mistake Bound} the maximum number of mistakes (binary
+  case) related to the \textbf{margin} or \textbf{degree} of
+  separability. $mistakes < \frac{k}{\delta^{2}}$
+\item \textbf{Noise} If the data isn't separable, weights might
+  thrash. 
+\item \textbf{Mediocre generalization} finds a ``barely'' separating
+  solution. 
+\item \textbf{Fixing the Perceptron} How to? Adjust the weight update
+  to mitigate these effects.
+\item \textbf{Only support vectors} matter; other training samples
+  are ignorable.
+\item Basically, SVMs are MIRA where you optimize over all samples at
+  once. ``It's all about the direction of w (namely the perceptron)
+  here, not the magnitude.''
+\item This algorithm takes multiple passes through data, but it is
+  ``often'' (who the heck knows whether it's really often. Got the
+  money. Got the publication. And got the girl.)
+\item Especially there are a wide variety of features that you have to
+  incorporate and trade off between.
+\end{itemize}
+
+\subsection{Machine Learning: Kernels and Clustering}
+\label{sec:mach-learn-kern}
+
+\begin{itemize}
+\item \textbf{Nearest-Neighbor Classification} the key issue is how to
+  define {\color{red}\textbf{similarity}}. Small $k$ gives relevant neighbors,
+  large $k$ gives smoother functions.
+\item Parametric models: more data means better settings.
+\item Non-parametric models: Better in \textbf{the limit}, often worse
+  in the non-limit.
+\item Essentially the distance and similarity are ``almost
+  equivalent''.
+\item Many similarities based on \textbf{feature dot products}.
+\item A lot of work in Machine Learning, well, as have stated, is to
+  \textbf{design the features} by/for yourself.
+\item As we evaluate the new training example, what we do is computing
+  the \textbf{similarity} between $f(x_{i})$ and $f(x)$ (so it should
+  be a $N-N$ matrix) for kernel $K$. Once we have the kernels, we sum
+  them up together with \textbf{appropriate weights}. That's our
+  FUCKING FANCY NEW metric.
+\item \textbf{Kernelized Perceptron} If we had a black box (kernel)
+  $K$ that told us the dot product of two examples $x$ and $x'$, we
+  will no longer need to ever take dot products. (FUCK THIS KERNEL
+  TRICK, IT USES IF. When we use ``if'', we do say something. But most
+  of the time, that's assumption.)
+\item The kernel is a \textbf{function} just as the very similar way
+  that \textbf{feature is a function}.
+\item \textbf{Kernel Trick} With this trick, we can substitute
+  \textbf{any} similarity function in place of the dot product. Keep
+  in mind that \textbf{if} your kernel does not satisfy
+  \textbf{certain technical requirements}, lots of proofs break. But
+  in practice they ``sometimes work''.
+\item \textbf{Non-linear Separators} Data that is linearly separable
+  works out great for linear decision rules. But what are we going
+  \textbf{to do} if the dataset is just too hard? How about\ldots
+  mapping data to a higher-dimensional space?
+\item \textbf{Kernels} implicitly \textbf{map} original vectors to
+  higher dimensional spaces.
+\item The training data is what you use to estimate the bulk of your
+  parameters; the held-out data is  to select which
+  ``hyper-parameter'' to use.
+\item Can't you just add these features on your own? Yes, in
+  principle, just compute them. But number of features can get large. 
+\item Kernels let us compute with these features implicitly. That's
+  why they exist.
+\item In reality there may be 100,000 features. Namely the $x$
+  dimensional space.
+\item All those methods are very sensitive to what \textbf{similarity
+    function} you use.
+\item \textbf{Agglomerative Clustering} How should we define
+  \textbf{closest} for clusters with \textbf{multiple elements}? There
+  are many options, like closest pair, farthest pair, average of all
+  pairs, Ward's method, etc. Different choices create different
+  clustering behaviors.
+\item 
+\end{itemize}
+
+\subsection{Advanced Applications: NLP, Games and Cars}
+\label{sec:advanc-appl-nlp}
+
+\begin{itemize}
+\item 
+\end{itemize}
 \end{document}
 
 %%% Local Variables:

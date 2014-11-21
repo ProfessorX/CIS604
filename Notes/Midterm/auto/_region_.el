@@ -21,5 +21,22 @@
     "sec:informed-search"
     "eq:1"
     "sec:constr-satisf-probl"
-    "sec:adversarial-search")))
+    "sec:adversarial-search"
+    "sec:uncert-knowl-reas"
+    "sec:expectimax-utilities"
+    "sec:mark-decis-proc"
+    "sec:mark-decis-proc-1"
+    "sec:probability"
+    "sec:markov-models"
+    "sec:hmms-part-filt"
+    "sec:application-hmms"
+    "sec:bayes-nets:-repr"
+    "sec:bayes-nets:-indep"
+    "sec:bayes-nets:-infer"
+    "sec:bayes-nets:-sampling"
+    "sec:decis-diagr-value"
+    "sec:learning"
+    "sec:reinf-learn-1"
+    "sec:reinf-learn-2"
+    "sec:mach-learn-naive-1")))
 
