@@ -41,5 +41,9 @@
     "sec:mach-learn-naive-1"
     "sec:mach-learn-perc"
     "sec:mach-learn-kern"
-    "sec:advanc-appl-nlp")))
+    "sec:advanc-appl-nlp"
+    "sec:advanc-appl-comp"
+    "sec:step-step-tutorials"
+    "sec:dfs-bfs"
+    "sec:star-search")))
 

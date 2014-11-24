@@ -1229,7 +1229,89 @@
 \label{sec:advanc-appl-nlp}
 
 \begin{itemize}
+\item \textbf{Web Search} Not exactly classification, but rather
+  \textbf{ranking}. 
+\item ``How do you generalize perceptron to this new scenario?''
+\item \textbf{Natural Language Processing} Analyze and process human
+  languages, broadly, robustly, accurately\ldots
+\item Speech recognition, machine translation, information extraction,
+  dialog interfaces, question answering.
+\item \textbf{Parsing} Given a sentence, find the best tree-search.
+\item \textbf{PCFGs} are a formal probabilistic model of trees. Try to
+  remember the Abstract Syntax Trees.
+\item ``When you don't have money, you can't pay researchers.''
+\item \textbf{Levels of Transfer} Word, Phrases, Syntax, Semantics,
+  Interlingua. 
+\item ``It's in general not a good thing to play a lot of computer
+  games.'' 
+\item Adversarial, Long Horizon, Partially Observable, Realtime, Huge
+  Branching factor, Concurrent, Resource-rich.
 \item 
+\end{itemize}
+
+
+\subsection{Advanced Applications: Computer Vision and Robotics}
+\label{sec:advanc-appl-comp}
+
+\begin{itemize}
+\item \textbf{Object Detection Approach} HOG plus SVM.
+\item Another approach is deep learning.
+\item \textbf{Hill Climbing Again} Start wherever, move to the best
+  neighboring state, if no neighbors better than current, quit. We
+  define the neighbors to be a small perturbations of $w$.
+\item \textbf{Auto-Encoder}
+  $min_{w}\Sigma_{i=1}^{m}\Sigma_{j=1}^{n}(f_{j}^{i} -h_
+  {j}(w,f^{i}))^{2}$ 
+\item \textbf{Low-Level} control problem: moving a foot into a new
+  location. This is equivalent to search with successor function, then
+  control the moving motors. 
+\item \textbf{High-Level} control problem: where should we place the
+  feet. ``We'' build the reward function $R(x)=w . f(s)$
+\item Demonstrate path across the ``training terrain''. Run
+  apprenticeship to learn the reward function. Receive ``testing
+  terrain'', the height map. And last but not least, find the optimal
+  policy with respect to \textbf{the learned reward function} for
+  crossing the testing terrain.
+\end{itemize}
+
+
+\section{Step-by-Step Tutorials}
+\label{sec:step-step-tutorials}
+
+\subsection{DFS and BFS}
+\label{sec:dfs-bfs}
+
+\begin{itemize}
+\item \textbf{DFS} always looks for things deepest in the tree first.
+\item Priority Queue: always go with the \textbf{highest
+    priority}. High priority is \textbf{defined} to have
+  \textbf{lowest} cost.
+\item 
+\end{itemize}
+
+\subsection{A Star Search}
+\label{sec:star-search}
+
+\begin{itemize}
+\item Same as intuitive tree search, the lower cost a path has,
+  \textbf{the higher priority it deserves}.
+\item For applications in graph search: when you are about to expand a
+  node, you check whether you expand the node that entered the same
+  state---if  that's the case, you don't (and of course, there is
+  \textbf{no need}) to expand the same node, you just take it out from
+  the \textbf{already existing} priority queue.
+\item So you avoid re-expanding \textbf{plans} (namely, paths) that
+  extend to the \textbf{same state}.
+\item To understand trees, you have to understand
+  \textbf{recursion}. Similarly, to understand \textbf{recursion}, you
+  have to do a \textbf{lot} of practice with TREES\@.
+\item \textbf{Consistency} as defined in $A^{*}$
+  search. $heur(s)-heur(s')\leq cost(s,s')$.
+\item WHAT THE HELL IS THE TRUE NAME FOR HEURISTIC\@?
+  \textbf{Guessing}. So to achieve \textbf{optimality}, you have to do
+  some \textbf{proper ``guessing''}. It means that only if you have a
+  consistent heuristic, will you be able to get \textbf{optimal path}
+  when doing the $A^{*}$ search.
 \end{itemize}
 \end{document}
 
