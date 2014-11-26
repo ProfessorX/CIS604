@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  24 NOV 2014 04:01
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  26 NOV 2014 05:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,16 +332,58 @@ Underfull \hbox (badness 1796) in paragraph at lines 1105--1107
 s (as per
  []
 
-[11] [12] [13
+[11] [12]
+Underfull \hbox (badness 1776) in paragraph at lines 1359--1365
+[]\OT1/cmr/m/n/10 In all those \OT1/cmr/bx/n/10 elim-i-na-tion \OT1/cmr/m/n/10 
+pro-cesses, we do the \OT1/cmr/bx/n/10 re-
+ []
 
-] (./Review-Notes.aux) ) 
+[13]
+File: snapshot130.png Graphic file (type QTm)
+ <use  "snapshot130.png" >
+File: snapshot132.png Graphic file (type QTm)
+ <use  "snapshot132.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14
+
+]
+File: snapshot134.png Graphic file (type QTm)
+
+<use  "snapshot134.png" >
+File: snapshot135.png Graphic file (type QTm)
+ <use  "snapshot135.png" >
+File: snapshot137.png Graphic file (type QTm)
+ <use  "snapshot137.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+File: snapshot138.png Graphic file (type QTm)
+
+<use  "snapshot138.png" >
+File: snapshot139.png Graphic file (type QTm)
+ <use  "snapshot139.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+File: snapshot140.png Graphic file (type QTm)
+
+<use  "snapshot140.png" >
+File: snapshot144.png Graphic file (type QTm)
+ <use  "snapshot144.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+File: snapshot145.png Graphic file (type QTm)
+
+<use  "snapshot145.png" > [18] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2482 strings out of 493727
- 30500 string characters out of 6147889
- 105497 words of memory out of 5000000
- 5802 multiletter control sequences out of 15000+600000
+ 2513 strings out of 493727
+ 31033 string characters out of 6147889
+ 105618 words of memory out of 5000000
+ 5823 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 27i,5n,35p,235b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,6n,35p,235b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (13 pages).
+Output written on Review-Notes.pdf (18 pages).

@@ -45,5 +45,16 @@
     "sec:advanc-appl-comp"
     "sec:step-step-tutorials"
     "sec:dfs-bfs"
-    "sec:star-search")))
+    "sec:star-search"
+    "sec:alpha-beta-pruning"
+    "sec:d-separation"
+    "sec:elim-one-vari"
+    "sec:variable-elimination"
+    "sec:sampling-in-bayes"
+    "sec:gibbs-sampling"
+    "sec:maximum-likelihood"
+    "sec:laplace-smoothing"
+    "sec:perceptron-update"
+    "sec:appendix"
+    "sec:visualization")))
 

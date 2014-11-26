@@ -1313,6 +1313,139 @@
   consistent heuristic, will you be able to get \textbf{optimal path}
   when doing the $A^{*}$ search.
 \end{itemize}
+
+\subsection{Alpha-Beta Pruning}
+\label{sec:alpha-beta-pruning}
+
+\begin{itemize}
+\item \textbf{Alpha} (my best) best already explored option along path
+  to the root for maximizer.
+\item \textbf{Beta} (your best) best already explored option along path to the
+  root for the \textbf{minimizer}
+\item Try to understand this sentence, then you will understand the
+  \textbf{essence} of \textbf{min-max} tree. ``6 is better than
+  $+\infty$ so the minimizer would pick 6.''
+\end{itemize}
+
+\subsection{D-Separation}
+\label{sec:d-separation}
+
+\begin{itemize}
+\item The good old question, ``Are X and Y conditionally independent
+  given evidence vars $Z$?'' Yes if X and Y are \textbf{separated} by
+  $Z$. Consider all \textbf{undirected} paths from X to Y, if there is
+  no active paths, we get \textbf{conditional independence}. This is
+  equivalent to say, \textbf{all paths from X to Y} are
+  \textbf{inactive}. 
+\item All it takes to block a path is \textbf{a single inactive}
+  segment. 
+\end{itemize}
+
+\subsection{Elimination of One Variable}
+\label{sec:elim-one-vari}
+
+\begin{itemize}
+\item Well, this part is somehow short. I may add something else
+  later. 
+\end{itemize}
+
+\subsection{Variable Elimination}
+\label{sec:variable-elimination}
+
+\begin{itemize}
+\item Integral, Summation or whatsoever.
+\item Ordering can affect the size of factors you generate along the
+  way. 
+\item In all those \textbf{elimination} processes, we do the
+  \textbf{re-normalization} in the last step. We may not know the
+  details. Even if we do, doing it at last would reduce the
+  \textbf{computational complexity}. In short, we do so either because
+  we lack computational power or \textbf{we are lazy enough}.
+\item 
+\end{itemize}
+
+\subsection{Sampling in Bayes Nets}
+\label{sec:sampling-in-bayes}
+
+\begin{itemize}
+\item \textbf{Sampling} from a Bayes Net. We can use \textbf{forward
+    sampling}. It's also called \textbf{prior sampling}.
+\item Whenever we ask the answer for conditional probability
+  distribution, the samples we care about are the ones that have
+  \textbf{correct evidence instantiation}. 
+\item If we know the \textbf{query} in advance, can we \textbf{sample
+    more efficiently}.
+\item To ``conclude'' this part, let us rephrase the good old
+  sentence. ``All probabilities are equal. But some are more equal
+  than others.''
+\item 
+\end{itemize}
+
+\subsection{Gibbs Sampling}
+\label{sec:gibbs-sampling}
+
+\begin{itemize}
+\item It's just a many-time likelihood sampling with a ``randomized''
+  variable selection.
+\item 
+\end{itemize}
+
+\subsection{Maximum Likelihood}
+\label{sec:maximum-likelihood}
+
+\begin{itemize}
+\item 
+\end{itemize}
+
+
+\subsection{Laplace Smoothing}
+\label{sec:laplace-smoothing}
+
+\begin{itemize}
+\item \textbf{Laplace Smoothing} tends to draw your probability
+  distribution closer to the uniform distribution.
+\item The larger you pick $k$, the closer you will be drawn into
+  uniform distribution.
+\item Because of this kind (bunch) of smoothing, your estimated
+  probabilities would be \textbf{non-zero}. That's very important
+  because \textbf{Machine Learners} hate 0.
+\item ``The core implementation of uniform distribution is, you
+  guessed it, \textbf{communism}.''
+\item Surely it is showing some kinds of \textbf{equality}, or rather
+  \textbf{communism} among the data/samplings.
+\end{itemize}
+
+\subsection{Perceptron Update}
+\label{sec:perceptron-update}
+
+
+\begin{itemize}
+\item The perceptron is a \textbf{linear} classifier and the way you
+  train the \textbf{weights} of your perceptron is by iterating
+  through the data.
+\item 
+\end{itemize}
+
+\onecolumn{}
+\section{Appendix}
+\label{sec:appendix}
+
+\subsection{Visualization}
+\label{sec:visualization}
+\centering{
+\includegraphics[scale=0.7]{snapshot130}\\
+\includegraphics[scale=0.7]{snapshot132}\\
+\includegraphics[scale=0.35]{snapshot134}\\
+\includegraphics[scale=0.5]{snapshot135}\\
+\includegraphics[scale=0.7]{snapshot137}\\
+\includegraphics[scale=0.7]{snapshot138}\\
+\includegraphics[scale=0.7]{snapshot139}\\
+\includegraphics[scale=0.4]{snapshot140}\\
+\includegraphics[scale=0.5]{snapshot144}\\
+\includegraphics[scale=0.3]{snapshot145}\\
+
+}
+
 \end{document}
 
 %%% Local Variables:
