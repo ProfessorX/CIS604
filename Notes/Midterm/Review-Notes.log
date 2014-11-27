@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  26 NOV 2014 05:23
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  26 NOV 2014 21:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -376,14 +376,78 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [17]
 File: snapshot145.png Graphic file (type QTm)
 
-<use  "snapshot145.png" > [18] (./Review-Notes.aux) ) 
+<use  "snapshot145.png" >
+File: snapshot147.png Graphic file (type QTm)
+ <use  "snapshot147.png" >
+File: snapshot148.png Graphic file (type QTm)
+ <use  "snapshot148.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+File: snapshot151.png Graphic file (type QTm)
+
+<use  "snapshot151.png" >
+File: snapshot152.png Graphic file (type QTm)
+ <use  "snapshot152.png" >
+File: snapshot153.png Graphic file (type QTm)
+ <use  "snapshot153.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+File: snapshot154.png Graphic file (type QTm)
+
+<use  "snapshot154.png" >
+File: snapshot155.png Graphic file (type QTm)
+ <use  "snapshot155.png" >
+File: snapshot156.png Graphic file (type QTm)
+ <use  "snapshot156.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+File: snapshot160.png Graphic file (type QTm)
+
+<use  "snapshot160.png" >
+File: snapshot161.png Graphic file (type QTm)
+ <use  "snapshot161.png" >
+File: snapshot162.png Graphic file (type QTm)
+ <use  "snapshot162.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+File: snapshot163.png Graphic file (type QTm)
+
+<use  "snapshot163.png" >
+File: snapshot164.png Graphic file (type QTm)
+ <use  "snapshot164.png" >
+File: snapshot165.png Graphic file (type QTm)
+ <use  "snapshot165.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+File: snapshot166.png Graphic file (type QTm)
+
+<use  "snapshot166.png" >
+File: snapshot167.png Graphic file (type QTm)
+ <use  "snapshot167.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+File: snapshot168.png Graphic file (type QTm)
+
+<use  "snapshot168.png" >
+File: snapshot169.png Graphic file (type QTm)
+ <use  "snapshot169.png" >
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+[25] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2513 strings out of 493727
- 31033 string characters out of 6147889
+ 2549 strings out of 493727
+ 31573 string characters out of 6147889
  105618 words of memory out of 5000000
- 5823 multiletter control sequences out of 15000+600000
+ 5841 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  27i,6n,35p,235b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (18 pages).
+Output written on Review-Notes.pdf (25 pages).
