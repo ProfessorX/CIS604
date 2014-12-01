@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  26 NOV 2014 21:45
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.17)  1 DEC 2014 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,14 +440,17 @@ File: snapshot169.png Graphic file (type QTm)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24]
-[25] (./Review-Notes.aux) ) 
+[25] [26
+
+
+] (./Review-Notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2549 strings out of 493727
- 31573 string characters out of 6147889
- 105618 words of memory out of 5000000
- 5841 multiletter control sequences out of 15000+600000
+ 2550 strings out of 493727
+ 31593 string characters out of 6147889
+ 105629 words of memory out of 5000000
+ 5842 multiletter control sequences out of 15000+600000
  7203 words of font info for 28 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  27i,6n,35p,235b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Review-Notes.pdf (25 pages).
+Output written on Review-Notes.pdf (26 pages).

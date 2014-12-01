@@ -56,5 +56,6 @@
     "sec:laplace-smoothing"
     "sec:perceptron-update"
     "sec:appendix"
-    "sec:visualization")))
+    "sec:visualization"
+    "sec:related-topics")))
 
